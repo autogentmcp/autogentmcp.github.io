@@ -1,0 +1,42 @@
+site_name: MCP Core Java SDK Docs
+nav:
+  - Home: index.md
+# Add more pages as needed
+theme:
+  name: material
+  features:
+    - navigation.tabs
+    - navigation.top
+    - content.code.annotate
+    - content.tabs.link
+    - content.tabs.code
+markdown_extensions:
+  - admonition
+  - codehilite
+  - toc:
+      permalink: true
+  - pymdownx.superfences
+  - pymdownx.tabbed
+  - pymdownx.details
+  - pymdownx.emoji
+  - pymdownx.tasklist
+  - pymdownx.highlight
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.caret
+  - pymdownx.tilde
+  - pymdownx.critic
+  - pymdownx.magiclink
+  - pymdownx.betterem
+  - pymdownx.smartsymbols
+  - pymdownx.progressbar
+extra_javascript:
+  - https://unpkg.com/mermaid@11.7.0/dist/mermaid.min.js
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/autogentmcp/docs
+      name: GitHub
+
