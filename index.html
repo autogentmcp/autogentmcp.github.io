@@ -517,16 +517,15 @@
 </ul>
 <hr />
 <h2 id="project-diagram">Project Diagram<a class="headerlink" href="#project-diagram" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code>graph TD
+<pre class="mermaid"><code>graph TD
     A[Your Spring Boot App] -- Registers/Heartbeats --&gt; B[MCP Registry Server]
     A -- Annotated Endpoints --&gt; C[Autogent MCP SDK]
     C -- Auto-registers endpoints --&gt; B
     B -- Returns registration status --&gt; C
-    C -- Logs and error handling --&gt; A
-</code></pre></div>
+    C -- Logs and error handling --&gt; A</code></pre>
 <hr />
 <h2 id="ecosystem-diagram">Ecosystem Diagram<a class="headerlink" href="#ecosystem-diagram" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code>graph TD
+<pre class="mermaid"><code>graph TD
     subgraph Apps &amp; SDKs
         A1[Spring Boot App\n(mcp-core-java)]
         A2[FastAPI App\n(mcp-core-python)]
@@ -538,8 +537,7 @@
     A3 -- Registers/Heartbeats --&gt; B
     B -- Discovery/Status --&gt; A1
     B -- Discovery/Status --&gt; A2
-    B -- Discovery/Status --&gt; A3
-</code></pre></div>
+    B -- Discovery/Status --&gt; A3</code></pre>
 <hr />
 <h2 id="how-it-connects">How It Connects<a class="headerlink" href="#how-it-connects" title="Permanent link">&para;</a></h2>
 <ul>
@@ -674,8 +672,6 @@ mkdocs<span class="w"> </span>serve
     
     
       <script src="assets/javascripts/bundle.13a4f30d.min.js"></script>
-      
-        <script src="https://unpkg.com/mermaid@11.7.0/dist/mermaid.min.js"></script>
       
     
   </body>
