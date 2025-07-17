@@ -1,7 +1,18 @@
-site_name: MCP Core Java SDK Docs
+site_name: Autogent MCP Ecosystem Docs
+site_url: https://autogentmcp.github.io/
 nav:
-  - Home: index.md
-# Add more pages as needed
+  - Overview: index.md
+  - MCP Portal: portal.md
+  - MCP Registry Server: mcp-registry.md
+  - Main Server: autogentmcp_server.md
+  - MCP Core Java SDK: mcp-core-java.md
+  - MCP Core Python SDK: mcp-core-python.md
+  - MCP Core Node SDK: mcp-core-node.md
+  - MCP Demo Apps: mcp-demo-apps.md
+  - Ecosystem Diagrams: diagrams.md
+  - Production Deployment: deployment.md
+  - Contributing Guide: contributing.md
+  - License Setup: license-setup.md
 theme:
   name: material
   features:
@@ -15,7 +26,10 @@ markdown_extensions:
   - codehilite
   - toc:
       permalink: true
-  - pymdownx.superfences
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
   - pymdownx.tabbed
   - pymdownx.details
   - pymdownx.emoji
@@ -32,8 +46,6 @@ markdown_extensions:
   - pymdownx.betterem
   - pymdownx.smartsymbols
   - pymdownx.progressbar
-extra_javascript:
-  - https://unpkg.com/mermaid@11.7.0/dist/mermaid.min.js
 extra:
   social:
     - icon: fontawesome/brands/github
