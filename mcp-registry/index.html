@@ -1,0 +1,2514 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://autogentmcp.github.io/mcp-registry/">
+      
+      
+        <link rel="prev" href="../portal/">
+      
+      
+        <link rel="next" href="../autogentmcp_server/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
+    
+    
+      
+        <title>MCP Registry Server - Autogent MCP Ecosystem Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.342714a4.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#mcp-registry-server" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Autogent MCP Ecosystem Docs" class="md-header__button md-logo" aria-label="Autogent MCP Ecosystem Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Autogent MCP Ecosystem Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              MCP Registry Server
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Overview
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../portal/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  MCP Portal
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="./" class="md-tabs__link">
+        
+  
+  
+    
+  
+  MCP Registry Server
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../autogentmcp_server/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Main Server
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../mcp-core-java/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  MCP Core Java SDK
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../mcp-core-python/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  MCP Core Python SDK
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../mcp-core-node/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  MCP Core Node SDK
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../mcp-demo-apps/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  MCP Demo Apps
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../diagrams/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Ecosystem Diagrams
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../deployment/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Production Deployment
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../contributing/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Contributing Guide
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../license-setup/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  License Setup
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Autogent MCP Ecosystem Docs" class="md-nav__button md-logo" aria-label="Autogent MCP Ecosystem Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Autogent MCP Ecosystem Docs
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../portal/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    MCP Portal
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    MCP Registry Server
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    MCP Registry Server
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#features" class="md-nav__link">
+    <span class="md-ellipsis">
+      🚀 Features
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      🏗️ Architecture
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔧 Installation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🔧 Installation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prerequisites
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-1-clone-and-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 1: Clone and Setup
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-database-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 2: Database Setup
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3-configure-environment" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 3: Configure Environment
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-4-start-the-server" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 4: Start the Server
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#api-documentation" class="md-nav__link">
+    <span class="md-ellipsis">
+      📚 API Documentation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#authentication" class="md-nav__link">
+    <span class="md-ellipsis">
+      🛡️ Authentication
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🛡️ Authentication">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#headers-required" class="md-nav__link">
+    <span class="md-ellipsis">
+      Headers Required
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#authentication-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      Authentication Flow
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#core-api-endpoints" class="md-nav__link">
+    <span class="md-ellipsis">
+      📋 Core API Endpoints
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📋 Core API Endpoints">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#application-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      Application Management
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Application Management">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#update-application" class="md-nav__link">
+    <span class="md-ellipsis">
+      Update Application
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-application" class="md-nav__link">
+    <span class="md-ellipsis">
+      Get Application
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#endpoint-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      Endpoint Management
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Endpoint Management">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#register-endpoints-batch" class="md-nav__link">
+    <span class="md-ellipsis">
+      Register Endpoints (Batch)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#list-endpoints" class="md-nav__link">
+    <span class="md-ellipsis">
+      List Endpoints
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#administrative-endpoints" class="md-nav__link">
+    <span class="md-ellipsis">
+      Administrative Endpoints
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Administrative Endpoints">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#list-all-applications" class="md-nav__link">
+    <span class="md-ellipsis">
+      List All Applications
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#list-applications-with-endpoints" class="md-nav__link">
+    <span class="md-ellipsis">
+      List Applications with Endpoints
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#health-monitoring" class="md-nav__link">
+    <span class="md-ellipsis">
+      🏥 Health Monitoring
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🏥 Health Monitoring">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#features_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Features
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#health-status-states" class="md-nav__link">
+    <span class="md-ellipsis">
+      Health Status States
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuration
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#health-check-apis" class="md-nav__link">
+    <span class="md-ellipsis">
+      Health Check APIs
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Health Check APIs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#get-application-health" class="md-nav__link">
+    <span class="md-ellipsis">
+      Get Application Health
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-health-logs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Get Health Logs
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#manual-health-check" class="md-nav__link">
+    <span class="md-ellipsis">
+      Manual Health Check
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#database-schema" class="md-nav__link">
+    <span class="md-ellipsis">
+      📊 Database Schema
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📊 Database Schema">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#core-tables" class="md-nav__link">
+    <span class="md-ellipsis">
+      Core Tables
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Core Tables">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#applications" class="md-nav__link">
+    <span class="md-ellipsis">
+      Applications
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#environments" class="md-nav__link">
+    <span class="md-ellipsis">
+      Environments
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#endpoints" class="md-nav__link">
+    <span class="md-ellipsis">
+      Endpoints
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#api-keys" class="md-nav__link">
+    <span class="md-ellipsis">
+      API Keys
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#development" class="md-nav__link">
+    <span class="md-ellipsis">
+      🛠️ Development
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🛠️ Development">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#project-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      Project Structure
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#running-tests" class="md-nav__link">
+    <span class="md-ellipsis">
+      Running Tests
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#database-migrations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Database Migrations
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#migration-from-redis" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔄 Migration from Redis
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🔄 Migration from Redis">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#key-changes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Changes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#migration-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      Migration Steps
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#production-deployment" class="md-nav__link">
+    <span class="md-ellipsis">
+      🚀 Production Deployment
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🚀 Production Deployment">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#docker-deployment" class="md-nav__link">
+    <span class="md-ellipsis">
+      Docker Deployment
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#environment-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Environment Configuration
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#health-monitoring_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Health Monitoring
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#troubleshooting" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔍 Troubleshooting
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🔍 Troubleshooting">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#common-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      Common Issues
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Common Issues">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#database-connection-errors" class="md-nav__link">
+    <span class="md-ellipsis">
+      Database Connection Errors
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#authentication-failures" class="md-nav__link">
+    <span class="md-ellipsis">
+      Authentication Failures
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#health-check-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      Health Check Issues
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#performance-tuning" class="md-nav__link">
+    <span class="md-ellipsis">
+      📈 Performance Tuning
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📈 Performance Tuning">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#database-optimization" class="md-nav__link">
+    <span class="md-ellipsis">
+      Database Optimization
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#caching-strategy" class="md-nav__link">
+    <span class="md-ellipsis">
+      Caching Strategy
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#connection-pooling" class="md-nav__link">
+    <span class="md-ellipsis">
+      Connection Pooling
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#contributing" class="md-nav__link">
+    <span class="md-ellipsis">
+      🤝 Contributing
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#license" class="md-nav__link">
+    <span class="md-ellipsis">
+      📄 License
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../autogentmcp_server/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Main Server
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mcp-core-java/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    MCP Core Java SDK
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mcp-core-python/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    MCP Core Python SDK
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mcp-core-node/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    MCP Core Node SDK
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mcp-demo-apps/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    MCP Demo Apps
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../diagrams/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Ecosystem Diagrams
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deployment/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Production Deployment
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contributing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Contributing Guide
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../license-setup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    License Setup
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#features" class="md-nav__link">
+    <span class="md-ellipsis">
+      🚀 Features
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      🏗️ Architecture
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔧 Installation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🔧 Installation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prerequisites
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-1-clone-and-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 1: Clone and Setup
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-database-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 2: Database Setup
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3-configure-environment" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 3: Configure Environment
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-4-start-the-server" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 4: Start the Server
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#api-documentation" class="md-nav__link">
+    <span class="md-ellipsis">
+      📚 API Documentation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#authentication" class="md-nav__link">
+    <span class="md-ellipsis">
+      🛡️ Authentication
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🛡️ Authentication">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#headers-required" class="md-nav__link">
+    <span class="md-ellipsis">
+      Headers Required
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#authentication-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      Authentication Flow
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#core-api-endpoints" class="md-nav__link">
+    <span class="md-ellipsis">
+      📋 Core API Endpoints
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📋 Core API Endpoints">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#application-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      Application Management
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Application Management">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#update-application" class="md-nav__link">
+    <span class="md-ellipsis">
+      Update Application
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-application" class="md-nav__link">
+    <span class="md-ellipsis">
+      Get Application
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#endpoint-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      Endpoint Management
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Endpoint Management">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#register-endpoints-batch" class="md-nav__link">
+    <span class="md-ellipsis">
+      Register Endpoints (Batch)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#list-endpoints" class="md-nav__link">
+    <span class="md-ellipsis">
+      List Endpoints
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#administrative-endpoints" class="md-nav__link">
+    <span class="md-ellipsis">
+      Administrative Endpoints
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Administrative Endpoints">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#list-all-applications" class="md-nav__link">
+    <span class="md-ellipsis">
+      List All Applications
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#list-applications-with-endpoints" class="md-nav__link">
+    <span class="md-ellipsis">
+      List Applications with Endpoints
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#health-monitoring" class="md-nav__link">
+    <span class="md-ellipsis">
+      🏥 Health Monitoring
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🏥 Health Monitoring">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#features_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Features
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#health-status-states" class="md-nav__link">
+    <span class="md-ellipsis">
+      Health Status States
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuration
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#health-check-apis" class="md-nav__link">
+    <span class="md-ellipsis">
+      Health Check APIs
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Health Check APIs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#get-application-health" class="md-nav__link">
+    <span class="md-ellipsis">
+      Get Application Health
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-health-logs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Get Health Logs
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#manual-health-check" class="md-nav__link">
+    <span class="md-ellipsis">
+      Manual Health Check
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#database-schema" class="md-nav__link">
+    <span class="md-ellipsis">
+      📊 Database Schema
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📊 Database Schema">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#core-tables" class="md-nav__link">
+    <span class="md-ellipsis">
+      Core Tables
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Core Tables">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#applications" class="md-nav__link">
+    <span class="md-ellipsis">
+      Applications
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#environments" class="md-nav__link">
+    <span class="md-ellipsis">
+      Environments
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#endpoints" class="md-nav__link">
+    <span class="md-ellipsis">
+      Endpoints
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#api-keys" class="md-nav__link">
+    <span class="md-ellipsis">
+      API Keys
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#development" class="md-nav__link">
+    <span class="md-ellipsis">
+      🛠️ Development
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🛠️ Development">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#project-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      Project Structure
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#running-tests" class="md-nav__link">
+    <span class="md-ellipsis">
+      Running Tests
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#database-migrations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Database Migrations
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#migration-from-redis" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔄 Migration from Redis
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🔄 Migration from Redis">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#key-changes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Changes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#migration-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      Migration Steps
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#production-deployment" class="md-nav__link">
+    <span class="md-ellipsis">
+      🚀 Production Deployment
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🚀 Production Deployment">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#docker-deployment" class="md-nav__link">
+    <span class="md-ellipsis">
+      Docker Deployment
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#environment-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Environment Configuration
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#health-monitoring_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Health Monitoring
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#troubleshooting" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔍 Troubleshooting
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🔍 Troubleshooting">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#common-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      Common Issues
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Common Issues">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#database-connection-errors" class="md-nav__link">
+    <span class="md-ellipsis">
+      Database Connection Errors
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#authentication-failures" class="md-nav__link">
+    <span class="md-ellipsis">
+      Authentication Failures
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#health-check-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      Health Check Issues
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#performance-tuning" class="md-nav__link">
+    <span class="md-ellipsis">
+      📈 Performance Tuning
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📈 Performance Tuning">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#database-optimization" class="md-nav__link">
+    <span class="md-ellipsis">
+      Database Optimization
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#caching-strategy" class="md-nav__link">
+    <span class="md-ellipsis">
+      Caching Strategy
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#connection-pooling" class="md-nav__link">
+    <span class="md-ellipsis">
+      Connection Pooling
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#contributing" class="md-nav__link">
+    <span class="md-ellipsis">
+      🤝 Contributing
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#license" class="md-nav__link">
+    <span class="md-ellipsis">
+      📄 License
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="mcp-registry-server">MCP Registry Server<a class="headerlink" href="#mcp-registry-server" title="Permanent link">&para;</a></h1>
+<p>A high-performance, enterprise-grade Model Context Protocol registry server for managing applications, environments, and endpoints. Built with FastAPI and PostgreSQL with Prisma ORM.</p>
+<h2 id="features">🚀 Features<a class="headerlink" href="#features" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>🏗️ Application Management</strong>: Complete lifecycle management of applications and metadata</li>
+<li><strong>🔗 Endpoint Registry</strong>: Comprehensive API endpoint documentation with detailed metadata</li>
+<li><strong>🌍 Multi-Environment Support</strong>: Development, staging, production environment isolation</li>
+<li><strong>🛡️ API Key Authentication</strong>: Secure access control with bcrypt hashing</li>
+<li><strong>📊 Health Monitoring</strong>: Automatic health checks with configurable thresholds</li>
+<li><strong>📈 Audit Logging</strong>: Complete audit trails for all registry operations</li>
+<li><strong>⚡ High Performance</strong>: Optimized for production workloads with PostgreSQL</li>
+</ul>
+<h2 id="architecture">🏗️ Architecture<a class="headerlink" href="#architecture" title="Permanent link">&para;</a></h2>
+<pre class="mermaid"><code>graph TB
+    subgraph "Client Applications"
+        A1[Spring Boot App]
+        A2[FastAPI App]
+        A3[Express App]
+    end
+
+    subgraph "MCP Registry Server"
+        B[FastAPI Application]
+        C[PostgreSQL Database]
+        D[Prisma ORM]
+        E[Authentication Layer]
+        F[Health Check System]
+    end
+
+    subgraph "External Services"
+        G[Application Health Endpoints]
+    end
+
+    A1 --&gt; B
+    A2 --&gt; B
+    A3 --&gt; B
+    B --&gt; D
+    D --&gt; C
+    B --&gt; E
+    B --&gt; F
+    F --&gt; G
+
+    style B fill:#e1f5fe
+    style C fill:#f3e5f5
+    style E fill:#fff3e0
+    style F fill:#e8f5e8</code></pre>
+<h2 id="installation">🔧 Installation<a class="headerlink" href="#installation" title="Permanent link">&para;</a></h2>
+<h3 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Python 3.9+</li>
+<li>PostgreSQL 12+</li>
+<li>Node.js 16+ (for Prisma CLI)</li>
+</ul>
+<h3 id="step-1-clone-and-setup">Step 1: Clone and Setup<a class="headerlink" href="#step-1-clone-and-setup" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/autogentmcp/mcp-registry.git
+<span class="nb">cd</span><span class="w"> </span>mcp-registry
+
+<span class="c1"># Create virtual environment</span>
+python<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>venv
+<span class="nb">source</span><span class="w"> </span>venv/bin/activate<span class="w">  </span><span class="c1"># On Windows: venv\Scripts\activate</span>
+
+<span class="c1"># Install dependencies</span>
+pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>requirements.txt
+</code></pre></div>
+<h3 id="step-2-database-setup">Step 2: Database Setup<a class="headerlink" href="#step-2-database-setup" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># Install Prisma CLI</span>
+npm<span class="w"> </span>install<span class="w"> </span>-g<span class="w"> </span>prisma
+
+<span class="c1"># Generate Prisma client</span>
+prisma<span class="w"> </span>generate
+
+<span class="c1"># Setup database (creates tables)</span>
+prisma<span class="w"> </span>db<span class="w"> </span>push
+</code></pre></div>
+<h3 id="step-3-configure-environment">Step 3: Configure Environment<a class="headerlink" href="#step-3-configure-environment" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># Copy environment template</span>
+cp<span class="w"> </span>.env.example<span class="w"> </span>.env
+
+<span class="c1"># Edit .env file</span>
+nano<span class="w"> </span>.env
+</code></pre></div>
+<p><strong>Required Environment Variables:</strong>
+<div class="highlight"><pre><span></span><code># Database
+DATABASE_URL=postgresql://username:password@localhost:5432/mcp_registry
+
+# Security
+SECRET_KEY=your-super-secret-key-here
+REGISTRY_ADMIN_KEY=your-admin-api-key-here
+
+# Server
+PORT=8000
+HOST=0.0.0.0
+
+# Health Check Configuration
+HEALTH_CHECK_TIMEOUT=10
+HEALTH_CHECK_INTERVAL=300
+MAX_CONSECUTIVE_FAILURES=3
+MAX_CONSECUTIVE_SUCCESSES=2
+</code></pre></div></p>
+<h3 id="step-4-start-the-server">Step 4: Start the Server<a class="headerlink" href="#step-4-start-the-server" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># Using the provided runner</span>
+python<span class="w"> </span>run_server.py
+
+<span class="c1"># Or directly with uvicorn</span>
+uvicorn<span class="w"> </span>src.mcp_registry.server:app<span class="w"> </span>--reload<span class="w"> </span>--host<span class="w"> </span><span class="m">0</span>.0.0.0<span class="w"> </span>--port<span class="w"> </span><span class="m">8000</span>
+</code></pre></div>
+<h2 id="api-documentation">📚 API Documentation<a class="headerlink" href="#api-documentation" title="Permanent link">&para;</a></h2>
+<p>Once running, visit <code>http://localhost:8000/docs</code> for the interactive Swagger UI documentation.</p>
+<h2 id="authentication">🛡️ Authentication<a class="headerlink" href="#authentication" title="Permanent link">&para;</a></h2>
+<p>The registry uses API key authentication with three levels of access:</p>
+<h3 id="headers-required">Headers Required<a class="headerlink" href="#headers-required" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong><code>X-API-Key</code></strong>: The API key for the application</li>
+<li><strong><code>X-App-Key</code></strong>: The application key identifier</li>
+<li><strong><code>X-Admin-Key</code></strong>: Admin key for administrative endpoints (admin only)</li>
+<li><strong><code>X-Environment</code></strong>: Environment name (defaults to "production")</li>
+</ul>
+<h3 id="authentication-flow">Authentication Flow<a class="headerlink" href="#authentication-flow" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Client sends API key in <code>X-API-Key</code> header</li>
+<li>Registry looks up API keys for the application/environment</li>
+<li>System uses bcrypt to verify the provided key against stored hashes</li>
+<li>If valid, request is authenticated and authorized</li>
+</ol>
+<h2 id="core-api-endpoints">📋 Core API Endpoints<a class="headerlink" href="#core-api-endpoints" title="Permanent link">&para;</a></h2>
+<h3 id="application-management">Application Management<a class="headerlink" href="#application-management" title="Permanent link">&para;</a></h3>
+<h4 id="update-application">Update Application<a class="headerlink" href="#update-application" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="err">PUT /applications/{app_key}</span>
+<span class="err">Content-Type: application/json</span>
+<span class="err">X-API-Key: your-api-key</span>
+<span class="err">X-App-Key: your-app-key</span>
+
+<span class="err">{</span>
+<span class="err">  &quot;name&quot;: &quot;My Application&quot;,</span>
+<span class="err">  &quot;description&quot;: &quot;Application description&quot;,</span>
+<span class="err">  &quot;healthCheckUrl&quot;: &quot;https://myapp.com/health&quot;</span>
+<span class="err">}</span>
+</code></pre></div>
+<h4 id="get-application">Get Application<a class="headerlink" href="#get-application" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="err">GET /applications/{app_key}</span>
+<span class="err">X-Admin-Key: your-admin-key</span>
+</code></pre></div>
+<h3 id="endpoint-management">Endpoint Management<a class="headerlink" href="#endpoint-management" title="Permanent link">&para;</a></h3>
+<h4 id="register-endpoints-batch">Register Endpoints (Batch)<a class="headerlink" href="#register-endpoints-batch" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="err">POST /register/endpoints</span>
+<span class="err">Content-Type: application/json</span>
+<span class="err">X-API-Key: your-api-key</span>
+<span class="err">X-App-Key: your-app-key</span>
+<span class="err">X-Environment: production</span>
+
+<span class="err">{</span>
+<span class="err">  &quot;app_key&quot;: &quot;your-app-key&quot;,</span>
+<span class="err">  &quot;environment&quot;: &quot;production&quot;,</span>
+<span class="err">  &quot;endpoints&quot;: [</span>
+<span class="err">    {</span>
+<span class="err">      &quot;name&quot;: &quot;Get User&quot;,</span>
+<span class="err">      &quot;path&quot;: &quot;/api/users/{userId}&quot;,</span>
+<span class="err">      &quot;method&quot;: &quot;GET&quot;,</span>
+<span class="err">      &quot;description&quot;: &quot;Get user by ID&quot;,</span>
+<span class="err">      &quot;isPublic&quot;: false,</span>
+<span class="err">      &quot;authType&quot;: &quot;API_KEY&quot;,</span>
+<span class="err">      &quot;pathParams&quot;: {</span>
+<span class="err">        &quot;userId&quot;: {</span>
+<span class="err">          &quot;type&quot;: &quot;string&quot;,</span>
+<span class="err">          &quot;description&quot;: &quot;User ID&quot;</span>
+<span class="err">        }</span>
+<span class="err">      },</span>
+<span class="err">      &quot;queryParams&quot;: {</span>
+<span class="err">        &quot;include&quot;: {</span>
+<span class="err">          &quot;type&quot;: &quot;string&quot;,</span>
+<span class="err">          &quot;description&quot;: &quot;Fields to include&quot;</span>
+<span class="err">        }</span>
+<span class="err">      },</span>
+<span class="err">      &quot;responseBody&quot;: {</span>
+<span class="err">        &quot;type&quot;: &quot;object&quot;,</span>
+<span class="err">        &quot;properties&quot;: {</span>
+<span class="err">          &quot;id&quot;: {&quot;type&quot;: &quot;string&quot;},</span>
+<span class="err">          &quot;name&quot;: {&quot;type&quot;: &quot;string&quot;}</span>
+<span class="err">        }</span>
+<span class="err">      }</span>
+<span class="err">    }</span>
+<span class="err">  ]</span>
+<span class="err">}</span>
+</code></pre></div>
+<h4 id="list-endpoints">List Endpoints<a class="headerlink" href="#list-endpoints" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="err">GET /endpoints?app_key=your-app-key&amp;environment=production</span>
+</code></pre></div>
+<h3 id="administrative-endpoints">Administrative Endpoints<a class="headerlink" href="#administrative-endpoints" title="Permanent link">&para;</a></h3>
+<h4 id="list-all-applications">List All Applications<a class="headerlink" href="#list-all-applications" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="err">GET /applications</span>
+<span class="err">X-Admin-Key: your-admin-key</span>
+</code></pre></div>
+<h4 id="list-applications-with-endpoints">List Applications with Endpoints<a class="headerlink" href="#list-applications-with-endpoints" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="err">GET /applications/with-endpoints?environment=production</span>
+<span class="err">X-Admin-Key: your-admin-key</span>
+</code></pre></div>
+<h2 id="health-monitoring">🏥 Health Monitoring<a class="headerlink" href="#health-monitoring" title="Permanent link">&para;</a></h2>
+<p>The registry includes a sophisticated health monitoring system that automatically checks the health of registered applications.</p>
+<h3 id="features_1">Features<a class="headerlink" href="#features_1" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Automatic Health Checks</strong>: Periodic HTTP requests to application health endpoints</li>
+<li><strong>Environment-Specific</strong>: Separate health monitoring for each environment</li>
+<li><strong>Configurable Thresholds</strong>: Set failure/success counts before status changes</li>
+<li><strong>Health History</strong>: Complete audit trail of health check results</li>
+<li><strong>Manual Triggers</strong>: API endpoints to manually trigger health checks</li>
+</ul>
+<h3 id="health-status-states">Health Status States<a class="headerlink" href="#health-status-states" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>ACTIVE</strong>: Application is healthy and responding</li>
+<li><strong>INACTIVE</strong>: Application failed consecutive health checks</li>
+<li><strong>UNKNOWN</strong>: Initial state or health check errors</li>
+</ul>
+<h3 id="configuration">Configuration<a class="headerlink" href="#configuration" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code># Health check timeout (seconds)
+HEALTH_CHECK_TIMEOUT=10
+
+# Interval between health checks (seconds)
+HEALTH_CHECK_INTERVAL=300
+
+# Consecutive failures before marking inactive
+MAX_CONSECUTIVE_FAILURES=3
+
+# Consecutive successes before marking active
+MAX_CONSECUTIVE_SUCCESSES=2
+</code></pre></div>
+<h3 id="health-check-apis">Health Check APIs<a class="headerlink" href="#health-check-apis" title="Permanent link">&para;</a></h3>
+<h4 id="get-application-health">Get Application Health<a class="headerlink" href="#get-application-health" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="err">GET /health-check/applications/{app_id}</span>
+<span class="err">X-Admin-Key: your-admin-key</span>
+</code></pre></div>
+<h4 id="get-health-logs">Get Health Logs<a class="headerlink" href="#get-health-logs" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="err">GET /health-check/applications/{app_id}/logs</span>
+<span class="err">X-Admin-Key: your-admin-key</span>
+</code></pre></div>
+<h4 id="manual-health-check">Manual Health Check<a class="headerlink" href="#manual-health-check" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="err">POST /health-check/applications/{app_id}/check</span>
+<span class="err">X-Admin-Key: your-admin-key</span>
+</code></pre></div>
+<h2 id="database-schema">📊 Database Schema<a class="headerlink" href="#database-schema" title="Permanent link">&para;</a></h2>
+<h3 id="core-tables">Core Tables<a class="headerlink" href="#core-tables" title="Permanent link">&para;</a></h3>
+<h4 id="applications">Applications<a class="headerlink" href="#applications" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>id</code>: Unique identifier</li>
+<li><code>name</code>: Application name</li>
+<li><code>description</code>: Application description</li>
+<li><code>appKey</code>: Unique application key</li>
+<li><code>healthCheckUrl</code>: Health check endpoint URL</li>
+<li><code>healthStatus</code>: Current health status</li>
+<li><code>lastHealthCheckAt</code>: Last health check timestamp</li>
+<li><code>consecutiveFailures</code>: Count of consecutive failures</li>
+<li><code>consecutiveSuccesses</code>: Count of consecutive successes</li>
+</ul>
+<h4 id="environments">Environments<a class="headerlink" href="#environments" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>id</code>: Unique identifier</li>
+<li><code>name</code>: Environment name (e.g., "production")</li>
+<li><code>baseDomain</code>: Base domain for the environment</li>
+<li><code>healthStatus</code>: Environment-specific health status</li>
+<li><code>applicationId</code>: Foreign key to Applications table</li>
+</ul>
+<h4 id="endpoints">Endpoints<a class="headerlink" href="#endpoints" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>id</code>: Unique identifier</li>
+<li><code>name</code>: Endpoint name</li>
+<li><code>path</code>: URL path with parameters</li>
+<li><code>method</code>: HTTP method</li>
+<li><code>description</code>: Endpoint description</li>
+<li><code>isPublic</code>: Public accessibility flag</li>
+<li><code>authType</code>: Authentication type required</li>
+<li><code>pathParams</code>: Path parameter schema (JSON)</li>
+<li><code>queryParams</code>: Query parameter schema (JSON)</li>
+<li><code>requestBody</code>: Request body schema (JSON)</li>
+<li><code>responseBody</code>: Response body schema (JSON)</li>
+<li><code>environmentId</code>: Foreign key to Environments table</li>
+</ul>
+<h4 id="api-keys">API Keys<a class="headerlink" href="#api-keys" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>id</code>: Unique identifier</li>
+<li><code>hashedKey</code>: Bcrypt-hashed API key</li>
+<li><code>isActive</code>: Active status</li>
+<li><code>expiresAt</code>: Expiration timestamp</li>
+<li><code>environmentId</code>: Foreign key to Environments table</li>
+</ul>
+<h2 id="development">🛠️ Development<a class="headerlink" href="#development" title="Permanent link">&para;</a></h2>
+<h3 id="project-structure">Project Structure<a class="headerlink" href="#project-structure" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>mcp-registry/
+├── src/
+│   └── mcp_registry/
+│       ├── server.py              # FastAPI application
+│       ├── models.py              # Pydantic models
+│       ├── database.py            # Database connection
+│       ├── auth.py                # Authentication logic
+│       ├── endpoint_registration.py # Endpoint registration
+│       └── config.py              # Configuration
+├── prisma/
+│   └── schema.prisma              # Database schema
+├── examples/
+│   ├── curl/                      # cURL examples
+│   └── curl_examples.md           # Documentation examples
+├── docs/                          # Additional documentation
+├── requirements.txt               # Python dependencies
+└── run_server.py                  # Server runner
+</code></pre></div>
+<h3 id="running-tests">Running Tests<a class="headerlink" href="#running-tests" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># Install test dependencies</span>
+pip<span class="w"> </span>install<span class="w"> </span>pytest<span class="w"> </span>pytest-asyncio
+
+<span class="c1"># Run tests</span>
+pytest<span class="w"> </span>tests/
+</code></pre></div>
+<h3 id="database-migrations">Database Migrations<a class="headerlink" href="#database-migrations" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># Generate migration after schema changes</span>
+prisma<span class="w"> </span>migrate<span class="w"> </span>dev<span class="w"> </span>--name<span class="w"> </span>describe_changes
+
+<span class="c1"># Apply migrations to production</span>
+prisma<span class="w"> </span>migrate<span class="w"> </span>deploy
+</code></pre></div>
+<h2 id="migration-from-redis">🔄 Migration from Redis<a class="headerlink" href="#migration-from-redis" title="Permanent link">&para;</a></h2>
+<p>If you're migrating from a Redis-based registry:</p>
+<h3 id="key-changes">Key Changes<a class="headerlink" href="#key-changes" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>Batch Endpoint Registration</strong>: New <code>/register/endpoints</code> endpoint for efficient bulk operations</li>
+<li><strong>Environment-Specific API Keys</strong>: API keys are now tied to specific environments</li>
+<li><strong>Enhanced Authentication</strong>: Bcrypt hashing for API keys</li>
+<li><strong>Structured Data</strong>: Proper relational data model vs key-value storage</li>
+</ol>
+<h3 id="migration-steps">Migration Steps<a class="headerlink" href="#migration-steps" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Export data from Redis using provided migration script</li>
+<li>Set up PostgreSQL database</li>
+<li>Run migration script to import data</li>
+<li>Update client applications to use new API format</li>
+<li>Update authentication headers to include environment</li>
+</ol>
+<h2 id="production-deployment">🚀 Production Deployment<a class="headerlink" href="#production-deployment" title="Permanent link">&para;</a></h2>
+<h3 id="docker-deployment">Docker Deployment<a class="headerlink" href="#docker-deployment" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="k">FROM</span><span class="w"> </span><span class="s">python:3.11-slim</span>
+
+<span class="k">WORKDIR</span><span class="w"> </span><span class="s">/app</span>
+<span class="k">COPY</span><span class="w"> </span>requirements.txt<span class="w"> </span>.
+<span class="k">RUN</span><span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>requirements.txt
+
+<span class="k">COPY</span><span class="w"> </span>.<span class="w"> </span>.
+<span class="k">RUN</span><span class="w"> </span>prisma<span class="w"> </span>generate
+
+<span class="k">EXPOSE</span><span class="w"> </span><span class="s">8000</span>
+<span class="k">CMD</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;python&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;run_server.py&quot;</span><span class="p">]</span>
+</code></pre></div>
+<h3 id="environment-configuration">Environment Configuration<a class="headerlink" href="#environment-configuration" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code># Production settings
+DATABASE_URL=postgresql://user:pass@prod-db:5432/mcp_registry
+SECRET_KEY=production-secret-key
+REGISTRY_ADMIN_KEY=production-admin-key
+
+# Security
+CORS_ORIGINS=https://yourdomain.com,https://api.yourdomain.com
+ALLOWED_HOSTS=yourdomain.com,api.yourdomain.com
+
+# Performance
+WORKERS=4
+MAX_CONNECTIONS=20
+</code></pre></div>
+<h3 id="health-monitoring_1">Health Monitoring<a class="headerlink" href="#health-monitoring_1" title="Permanent link">&para;</a></h3>
+<p>Monitor these endpoints for production health:
+- <code>GET /health</code> - Overall system health
+- <code>GET /health-check/applications/{app_id}</code> - Individual application health
+- Database connection status
+- API response times</p>
+<h2 id="troubleshooting">🔍 Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permanent link">&para;</a></h2>
+<h3 id="common-issues">Common Issues<a class="headerlink" href="#common-issues" title="Permanent link">&para;</a></h3>
+<h4 id="database-connection-errors">Database Connection Errors<a class="headerlink" href="#database-connection-errors" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="c1"># Check PostgreSQL is running</span>
+pg_isready<span class="w"> </span>-h<span class="w"> </span>localhost<span class="w"> </span>-p<span class="w"> </span><span class="m">5432</span>
+
+<span class="c1"># Verify database exists</span>
+psql<span class="w"> </span>-h<span class="w"> </span>localhost<span class="w"> </span>-p<span class="w"> </span><span class="m">5432</span><span class="w"> </span>-d<span class="w"> </span>mcp_registry<span class="w"> </span>-c<span class="w"> </span><span class="s2">&quot;SELECT 1&quot;</span>
+
+<span class="c1"># Check connection string</span>
+<span class="nb">echo</span><span class="w"> </span><span class="nv">$DATABASE_URL</span>
+</code></pre></div>
+<h4 id="authentication-failures">Authentication Failures<a class="headerlink" href="#authentication-failures" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="c1"># Verify API key exists in database</span>
+psql<span class="w"> </span>-d<span class="w"> </span>mcp_registry<span class="w"> </span>-c<span class="w"> </span><span class="s2">&quot;SELECT * FROM \&quot;ApiKey\&quot; WHERE \&quot;environmentId\&quot; = &#39;your-env-id&#39;&quot;</span>
+
+<span class="c1"># Check bcrypt hash</span>
+python<span class="w"> </span>-c<span class="w"> </span><span class="s2">&quot;import bcrypt; print(bcrypt.checkpw(b&#39;your-key&#39;, b&#39;stored-hash&#39;))&quot;</span>
+</code></pre></div>
+<h4 id="health-check-issues">Health Check Issues<a class="headerlink" href="#health-check-issues" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="c1"># Check health check configuration</span>
+curl<span class="w"> </span>-H<span class="w"> </span><span class="s2">&quot;X-Admin-Key: your-admin-key&quot;</span><span class="w"> </span>http://localhost:8000/health-check/applications/app-id
+
+<span class="c1"># Manual health check</span>
+curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span>-H<span class="w"> </span><span class="s2">&quot;X-Admin-Key: your-admin-key&quot;</span><span class="w"> </span>http://localhost:8000/health-check/applications/app-id/check
+</code></pre></div>
+<h2 id="performance-tuning">📈 Performance Tuning<a class="headerlink" href="#performance-tuning" title="Permanent link">&para;</a></h2>
+<h3 id="database-optimization">Database Optimization<a class="headerlink" href="#database-optimization" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c1">-- Add indexes for common queries</span>
+<span class="k">CREATE</span><span class="w"> </span><span class="k">INDEX</span><span class="w"> </span><span class="k">IF</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">EXISTS</span><span class="w"> </span><span class="n">idx_applications_app_key</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="ss">&quot;Application&quot;</span><span class="p">(</span><span class="ss">&quot;appKey&quot;</span><span class="p">);</span>
+<span class="k">CREATE</span><span class="w"> </span><span class="k">INDEX</span><span class="w"> </span><span class="k">IF</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">EXISTS</span><span class="w"> </span><span class="n">idx_endpoints_environment</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="ss">&quot;Endpoint&quot;</span><span class="p">(</span><span class="ss">&quot;environmentId&quot;</span><span class="p">);</span>
+<span class="k">CREATE</span><span class="w"> </span><span class="k">INDEX</span><span class="w"> </span><span class="k">IF</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">EXISTS</span><span class="w"> </span><span class="n">idx_api_keys_environment</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="ss">&quot;ApiKey&quot;</span><span class="p">(</span><span class="ss">&quot;environmentId&quot;</span><span class="p">);</span>
+</code></pre></div>
+<h3 id="caching-strategy">Caching Strategy<a class="headerlink" href="#caching-strategy" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Use Redis for session caching</li>
+<li>Implement application-level caching for frequently accessed data</li>
+<li>Enable PostgreSQL query caching</li>
+</ul>
+<h3 id="connection-pooling">Connection Pooling<a class="headerlink" href="#connection-pooling" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># Configure connection pool</span>
+<span class="n">DATABASE_URL</span><span class="o">=</span><span class="n">postgresql</span><span class="p">:</span><span class="o">//</span><span class="n">user</span><span class="p">:</span><span class="k">pass</span><span class="nd">@host</span><span class="p">:</span><span class="mi">5432</span><span class="o">/</span><span class="n">db</span><span class="err">?</span><span class="n">pool_size</span><span class="o">=</span><span class="mi">20</span><span class="o">&amp;</span><span class="n">max_overflow</span><span class="o">=</span><span class="mi">30</span>
+</code></pre></div>
+<h2 id="contributing">🤝 Contributing<a class="headerlink" href="#contributing" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Fork the repository</li>
+<li>Create a feature branch: <code>git checkout -b feature/amazing-feature</code></li>
+<li>Make your changes</li>
+<li>Add tests for new functionality</li>
+<li>Ensure all tests pass: <code>pytest</code></li>
+<li>Submit a pull request</li>
+</ol>
+<h2 id="license">📄 License<a class="headerlink" href="#license" title="Permanent link">&para;</a></h2>
+<p>This project is licensed under the MIT License - see the <a href="https://github.com/autogentmcp/mcp-registry/blob/main/LICENSE">LICENSE</a> file for details.</p>
+<p><strong>Note</strong>: LICENSE file will be added to the repository soon. See the <a href="../contributing/#license">Contributing Guide</a> for full license details.</p>
+<hr />
+<p><strong>Next Steps</strong>: Explore the <a href="../autogentmcp_server/">Autogent MCP Server</a> for intelligent orchestration or check out our <a href="../mcp-core-java/">Java SDK</a> for easy integration.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+    <a href="https://github.com/autogentmcp/docs" target="_blank" rel="noopener" title="GitHub" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "navigation.top", "content.code.annotate", "content.tabs.link", "content.tabs.code"], "search": "../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.13a4f30d.min.js"></script>
+      
+    
+  </body>
+</html>

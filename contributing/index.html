@@ -1,0 +1,2780 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://autogentmcp.github.io/contributing/">
+      
+      
+        <link rel="prev" href="../deployment/">
+      
+      
+        <link rel="next" href="../license-setup/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
+    
+    
+      
+        <title>Contributing Guide - Autogent MCP Ecosystem Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.342714a4.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#contributing-to-autogent-mcp-ecosystem" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Autogent MCP Ecosystem Docs" class="md-header__button md-logo" aria-label="Autogent MCP Ecosystem Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Autogent MCP Ecosystem Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Contributing Guide
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Overview
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../portal/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  MCP Portal
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../mcp-registry/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  MCP Registry Server
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../autogentmcp_server/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Main Server
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../mcp-core-java/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  MCP Core Java SDK
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../mcp-core-python/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  MCP Core Python SDK
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../mcp-core-node/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  MCP Core Node SDK
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../mcp-demo-apps/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  MCP Demo Apps
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../diagrams/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Ecosystem Diagrams
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../deployment/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Production Deployment
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="./" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Contributing Guide
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../license-setup/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  License Setup
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Autogent MCP Ecosystem Docs" class="md-nav__button md-logo" aria-label="Autogent MCP Ecosystem Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Autogent MCP Ecosystem Docs
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../portal/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    MCP Portal
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mcp-registry/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    MCP Registry Server
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../autogentmcp_server/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Main Server
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mcp-core-java/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    MCP Core Java SDK
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mcp-core-python/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    MCP Core Python SDK
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mcp-core-node/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    MCP Core Node SDK
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mcp-demo-apps/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    MCP Demo Apps
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../diagrams/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Ecosystem Diagrams
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deployment/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Production Deployment
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Contributing Guide
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Contributing Guide
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      🎯 Overview
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quick-start-for-contributors" class="md-nav__link">
+    <span class="md-ellipsis">
+      🚀 Quick Start for Contributors
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🚀 Quick Start for Contributors">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-find-your-contribution-area" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Find Your Contribution Area
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-set-up-your-development-environment" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Set Up Your Development Environment
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-create-your-first-contribution" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Create Your First Contribution
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#contribution-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      📋 Contribution Types
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📋 Contribution Types">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#code-contributions" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔧 Code Contributions
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🔧 Code Contributions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#new-features" class="md-nav__link">
+    <span class="md-ellipsis">
+      New Features
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bug-fixes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bug Fixes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#performance-improvements" class="md-nav__link">
+    <span class="md-ellipsis">
+      Performance Improvements
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#documentation-contributions" class="md-nav__link">
+    <span class="md-ellipsis">
+      📚 Documentation Contributions
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📚 Documentation Contributions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#user-documentation" class="md-nav__link">
+    <span class="md-ellipsis">
+      User Documentation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#developer-documentation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Developer Documentation
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#testing-contributions" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧪 Testing Contributions
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🧪 Testing Contributions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#unit-tests" class="md-nav__link">
+    <span class="md-ellipsis">
+      Unit Tests
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#end-to-end-tests" class="md-nav__link">
+    <span class="md-ellipsis">
+      End-to-End Tests
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#design-contributions" class="md-nav__link">
+    <span class="md-ellipsis">
+      🎨 Design Contributions
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🎨 Design Contributions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#uiux-improvements" class="md-nav__link">
+    <span class="md-ellipsis">
+      UI/UX Improvements
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#visual-assets" class="md-nav__link">
+    <span class="md-ellipsis">
+      Visual Assets
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#development-guidelines" class="md-nav__link">
+    <span class="md-ellipsis">
+      🛠️ Development Guidelines
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🛠️ Development Guidelines">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#code-style" class="md-nav__link">
+    <span class="md-ellipsis">
+      Code Style
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Code Style">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#python-projects" class="md-nav__link">
+    <span class="md-ellipsis">
+      Python Projects
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#typescriptjavascript-projects" class="md-nav__link">
+    <span class="md-ellipsis">
+      TypeScript/JavaScript Projects
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#java-projects" class="md-nav__link">
+    <span class="md-ellipsis">
+      Java Projects
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#testing-guidelines" class="md-nav__link">
+    <span class="md-ellipsis">
+      Testing Guidelines
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Testing Guidelines">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#test-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      Test Structure
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test-coverage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Test Coverage
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#documentation-standards" class="md-nav__link">
+    <span class="md-ellipsis">
+      Documentation Standards
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Documentation Standards">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#code-documentation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Code Documentation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#api-documentation" class="md-nav__link">
+    <span class="md-ellipsis">
+      API Documentation
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pull-request-process" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔄 Pull Request Process
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🔄 Pull Request Process">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-before-creating-a-pr" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Before Creating a PR
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Before Creating a PR">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#check-for-existing-work" class="md-nav__link">
+    <span class="md-ellipsis">
+      Check for Existing Work
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prepare-your-changes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prepare Your Changes
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-creating-the-pr" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Creating the PR
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Creating the PR">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pr-title-format" class="md-nav__link">
+    <span class="md-ellipsis">
+      PR Title Format
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pr-description-template" class="md-nav__link">
+    <span class="md-ellipsis">
+      PR Description Template
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-code-review-process" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Code Review Process
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Code Review Process">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#review-criteria" class="md-nav__link">
+    <span class="md-ellipsis">
+      Review Criteria
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#responding-to-reviews" class="md-nav__link">
+    <span class="md-ellipsis">
+      Responding to Reviews
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#issue-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      🏷️ Issue Management
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🏷️ Issue Management">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#issue-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      Issue Types
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Issue Types">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bug-reports" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bug Reports
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#feature-requests" class="md-nav__link">
+    <span class="md-ellipsis">
+      Feature Requests
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#issue-labels" class="md-nav__link">
+    <span class="md-ellipsis">
+      Issue Labels
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#recognition-and-rewards" class="md-nav__link">
+    <span class="md-ellipsis">
+      🌟 Recognition and Rewards
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🌟 Recognition and Rewards">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#contributor-recognition" class="md-nav__link">
+    <span class="md-ellipsis">
+      Contributor Recognition
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#maintainer-path" class="md-nav__link">
+    <span class="md-ellipsis">
+      Maintainer Path
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Maintainer Path">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#maintainer-responsibilities" class="md-nav__link">
+    <span class="md-ellipsis">
+      Maintainer Responsibilities
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#maintainer-requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      Maintainer Requirements
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#security" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔒 Security
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🔒 Security">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#security-vulnerabilities" class="md-nav__link">
+    <span class="md-ellipsis">
+      Security Vulnerabilities
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#security-best-practices" class="md-nav__link">
+    <span class="md-ellipsis">
+      Security Best Practices
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#license" class="md-nav__link">
+    <span class="md-ellipsis">
+      📄 License
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📄 License">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#you-can" class="md-nav__link">
+    <span class="md-ellipsis">
+      ✅ You Can
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#you-must" class="md-nav__link">
+    <span class="md-ellipsis">
+      ❗ You Must
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#limitations" class="md-nav__link">
+    <span class="md-ellipsis">
+      🚫 Limitations
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#license-text" class="md-nav__link">
+    <span class="md-ellipsis">
+      License Text
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#getting-help" class="md-nav__link">
+    <span class="md-ellipsis">
+      📞 Getting Help
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📞 Getting Help">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#community-support" class="md-nav__link">
+    <span class="md-ellipsis">
+      Community Support
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#technical-support" class="md-nav__link">
+    <span class="md-ellipsis">
+      Technical Support
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#thank-you" class="md-nav__link">
+    <span class="md-ellipsis">
+      🎉 Thank You!
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🎉 Thank You!">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#join-our-community" class="md-nav__link">
+    <span class="md-ellipsis">
+      Join Our Community
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../license-setup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    License Setup
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      🎯 Overview
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quick-start-for-contributors" class="md-nav__link">
+    <span class="md-ellipsis">
+      🚀 Quick Start for Contributors
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🚀 Quick Start for Contributors">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-find-your-contribution-area" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Find Your Contribution Area
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-set-up-your-development-environment" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Set Up Your Development Environment
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-create-your-first-contribution" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Create Your First Contribution
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#contribution-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      📋 Contribution Types
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📋 Contribution Types">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#code-contributions" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔧 Code Contributions
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🔧 Code Contributions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#new-features" class="md-nav__link">
+    <span class="md-ellipsis">
+      New Features
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bug-fixes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bug Fixes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#performance-improvements" class="md-nav__link">
+    <span class="md-ellipsis">
+      Performance Improvements
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#documentation-contributions" class="md-nav__link">
+    <span class="md-ellipsis">
+      📚 Documentation Contributions
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📚 Documentation Contributions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#user-documentation" class="md-nav__link">
+    <span class="md-ellipsis">
+      User Documentation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#developer-documentation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Developer Documentation
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#testing-contributions" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧪 Testing Contributions
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🧪 Testing Contributions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#unit-tests" class="md-nav__link">
+    <span class="md-ellipsis">
+      Unit Tests
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#end-to-end-tests" class="md-nav__link">
+    <span class="md-ellipsis">
+      End-to-End Tests
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#design-contributions" class="md-nav__link">
+    <span class="md-ellipsis">
+      🎨 Design Contributions
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🎨 Design Contributions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#uiux-improvements" class="md-nav__link">
+    <span class="md-ellipsis">
+      UI/UX Improvements
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#visual-assets" class="md-nav__link">
+    <span class="md-ellipsis">
+      Visual Assets
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#development-guidelines" class="md-nav__link">
+    <span class="md-ellipsis">
+      🛠️ Development Guidelines
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🛠️ Development Guidelines">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#code-style" class="md-nav__link">
+    <span class="md-ellipsis">
+      Code Style
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Code Style">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#python-projects" class="md-nav__link">
+    <span class="md-ellipsis">
+      Python Projects
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#typescriptjavascript-projects" class="md-nav__link">
+    <span class="md-ellipsis">
+      TypeScript/JavaScript Projects
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#java-projects" class="md-nav__link">
+    <span class="md-ellipsis">
+      Java Projects
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#testing-guidelines" class="md-nav__link">
+    <span class="md-ellipsis">
+      Testing Guidelines
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Testing Guidelines">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#test-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      Test Structure
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test-coverage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Test Coverage
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#documentation-standards" class="md-nav__link">
+    <span class="md-ellipsis">
+      Documentation Standards
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Documentation Standards">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#code-documentation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Code Documentation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#api-documentation" class="md-nav__link">
+    <span class="md-ellipsis">
+      API Documentation
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pull-request-process" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔄 Pull Request Process
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🔄 Pull Request Process">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-before-creating-a-pr" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Before Creating a PR
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Before Creating a PR">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#check-for-existing-work" class="md-nav__link">
+    <span class="md-ellipsis">
+      Check for Existing Work
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prepare-your-changes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prepare Your Changes
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-creating-the-pr" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Creating the PR
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Creating the PR">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pr-title-format" class="md-nav__link">
+    <span class="md-ellipsis">
+      PR Title Format
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pr-description-template" class="md-nav__link">
+    <span class="md-ellipsis">
+      PR Description Template
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-code-review-process" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Code Review Process
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Code Review Process">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#review-criteria" class="md-nav__link">
+    <span class="md-ellipsis">
+      Review Criteria
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#responding-to-reviews" class="md-nav__link">
+    <span class="md-ellipsis">
+      Responding to Reviews
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#issue-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      🏷️ Issue Management
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🏷️ Issue Management">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#issue-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      Issue Types
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Issue Types">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bug-reports" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bug Reports
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#feature-requests" class="md-nav__link">
+    <span class="md-ellipsis">
+      Feature Requests
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#issue-labels" class="md-nav__link">
+    <span class="md-ellipsis">
+      Issue Labels
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#recognition-and-rewards" class="md-nav__link">
+    <span class="md-ellipsis">
+      🌟 Recognition and Rewards
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🌟 Recognition and Rewards">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#contributor-recognition" class="md-nav__link">
+    <span class="md-ellipsis">
+      Contributor Recognition
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#maintainer-path" class="md-nav__link">
+    <span class="md-ellipsis">
+      Maintainer Path
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Maintainer Path">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#maintainer-responsibilities" class="md-nav__link">
+    <span class="md-ellipsis">
+      Maintainer Responsibilities
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#maintainer-requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      Maintainer Requirements
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#security" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔒 Security
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🔒 Security">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#security-vulnerabilities" class="md-nav__link">
+    <span class="md-ellipsis">
+      Security Vulnerabilities
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#security-best-practices" class="md-nav__link">
+    <span class="md-ellipsis">
+      Security Best Practices
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#license" class="md-nav__link">
+    <span class="md-ellipsis">
+      📄 License
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📄 License">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#you-can" class="md-nav__link">
+    <span class="md-ellipsis">
+      ✅ You Can
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#you-must" class="md-nav__link">
+    <span class="md-ellipsis">
+      ❗ You Must
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#limitations" class="md-nav__link">
+    <span class="md-ellipsis">
+      🚫 Limitations
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#license-text" class="md-nav__link">
+    <span class="md-ellipsis">
+      License Text
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#getting-help" class="md-nav__link">
+    <span class="md-ellipsis">
+      📞 Getting Help
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📞 Getting Help">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#community-support" class="md-nav__link">
+    <span class="md-ellipsis">
+      Community Support
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#technical-support" class="md-nav__link">
+    <span class="md-ellipsis">
+      Technical Support
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#thank-you" class="md-nav__link">
+    <span class="md-ellipsis">
+      🎉 Thank You!
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🎉 Thank You!">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#join-our-community" class="md-nav__link">
+    <span class="md-ellipsis">
+      Join Our Community
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="contributing-to-autogent-mcp-ecosystem">Contributing to Autogent MCP Ecosystem<a class="headerlink" href="#contributing-to-autogent-mcp-ecosystem" title="Permanent link">&para;</a></h1>
+<p>Thank you for your interest in contributing to the Autogent MCP ecosystem! This guide will help you get started with contributing to our open-source projects.</p>
+<h2 id="overview">🎯 Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
+<p>The Autogent MCP ecosystem is a collaborative open-source project that welcomes contributions from developers, documentation writers, designers, and users. Whether you're fixing a typo, adding a new feature, or helping with project management, your contributions are valuable.</p>
+<h2 id="quick-start-for-contributors">🚀 Quick Start for Contributors<a class="headerlink" href="#quick-start-for-contributors" title="Permanent link">&para;</a></h2>
+<h3 id="1-find-your-contribution-area">1. Find Your Contribution Area<a class="headerlink" href="#1-find-your-contribution-area" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Interest</th>
+<th>Repositories</th>
+<th>Skills Needed</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Web Development</strong></td>
+<td><a href="https://github.com/autogentmcp/portal">Portal</a></td>
+<td>Next.js, TypeScript, React</td>
+</tr>
+<tr>
+<td><strong>Backend Services</strong></td>
+<td><a href="https://github.com/autogentmcp/mcp-registry">Registry</a>, <a href="https://github.com/autogentmcp/autogentmcp_server">Autogent Server</a></td>
+<td>Python, FastAPI, PostgreSQL</td>
+</tr>
+<tr>
+<td><strong>Java Development</strong></td>
+<td><a href="https://github.com/autogentmcp/mcp-core-java">Java SDK</a></td>
+<td>Java, Spring Boot, Maven</td>
+</tr>
+<tr>
+<td><strong>Python Development</strong></td>
+<td><a href="https://github.com/autogentmcp/mcp-core-python">Python SDK</a></td>
+<td>Python, FastAPI, Flask, Django</td>
+</tr>
+<tr>
+<td><strong>Node.js Development</strong></td>
+<td><a href="https://github.com/autogentmcp/mcp-core-node">Node.js SDK</a></td>
+<td>TypeScript, Express, Fastify</td>
+</tr>
+<tr>
+<td><strong>Documentation</strong></td>
+<td><a href="https://github.com/autogentmcp/autogentmcp.github.io">Documentation</a></td>
+<td>Markdown, MkDocs</td>
+</tr>
+<tr>
+<td><strong>Examples &amp; Demos</strong></td>
+<td><a href="https://github.com/autogentmcp/mcp-demo-apps">Demo Apps</a></td>
+<td>Multiple languages</td>
+</tr>
+</tbody>
+</table>
+<h3 id="2-set-up-your-development-environment">2. Set Up Your Development Environment<a class="headerlink" href="#2-set-up-your-development-environment" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># 1. Fork the repository on GitHub</span>
+<span class="c1"># 2. Clone your fork</span>
+git<span class="w"> </span>clone<span class="w"> </span>https://github.com/YOUR_USERNAME/REPOSITORY_NAME.git
+<span class="nb">cd</span><span class="w"> </span>REPOSITORY_NAME
+
+<span class="c1"># 3. Add upstream remote</span>
+git<span class="w"> </span>remote<span class="w"> </span>add<span class="w"> </span>upstream<span class="w"> </span>https://github.com/autogentmcp/REPOSITORY_NAME.git
+
+<span class="c1"># 4. Install dependencies (varies by project)</span>
+<span class="c1"># For Node.js projects:</span>
+npm<span class="w"> </span>install
+
+<span class="c1"># For Python projects:</span>
+pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>requirements.txt
+pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>requirements-dev.txt
+
+<span class="c1"># For Java projects:</span>
+mvn<span class="w"> </span>clean<span class="w"> </span>install
+</code></pre></div>
+<h3 id="3-create-your-first-contribution">3. Create Your First Contribution<a class="headerlink" href="#3-create-your-first-contribution" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># 1. Create a feature branch</span>
+git<span class="w"> </span>checkout<span class="w"> </span>-b<span class="w"> </span>feature/your-feature-name
+
+<span class="c1"># 2. Make your changes</span>
+<span class="c1"># 3. Add tests</span>
+<span class="c1"># 4. Update documentation</span>
+<span class="c1"># 5. Commit your changes</span>
+git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;feat: add your feature description&quot;</span>
+
+<span class="c1"># 6. Push to your fork</span>
+git<span class="w"> </span>push<span class="w"> </span>origin<span class="w"> </span>feature/your-feature-name
+
+<span class="c1"># 7. Create a Pull Request on GitHub</span>
+</code></pre></div>
+<h2 id="contribution-types">📋 Contribution Types<a class="headerlink" href="#contribution-types" title="Permanent link">&para;</a></h2>
+<h3 id="code-contributions">🔧 Code Contributions<a class="headerlink" href="#code-contributions" title="Permanent link">&para;</a></h3>
+<h4 id="new-features">New Features<a class="headerlink" href="#new-features" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>Authentication Methods</strong>: Add support for new authentication protocols</li>
+<li><strong>Vault Providers</strong>: Integrate new secret management providers</li>
+<li><strong>Framework Support</strong>: Add support for new web frameworks</li>
+<li><strong>Monitoring Tools</strong>: Enhance observability and monitoring</li>
+</ul>
+<h4 id="bug-fixes">Bug Fixes<a class="headerlink" href="#bug-fixes" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>Critical Bugs</strong>: Security vulnerabilities, data corruption, crashes</li>
+<li><strong>Performance Issues</strong>: Memory leaks, slow queries, inefficient algorithms</li>
+<li><strong>Integration Issues</strong>: SDK integration problems, API compatibility</li>
+<li><strong>User Experience</strong>: UI/UX improvements, error handling</li>
+</ul>
+<h4 id="performance-improvements">Performance Improvements<a class="headerlink" href="#performance-improvements" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>Caching</strong>: Implement or improve caching strategies</li>
+<li><strong>Database Optimization</strong>: Query optimization, indexing</li>
+<li><strong>Connection Pooling</strong>: Optimize database and external service connections</li>
+<li><strong>Async Processing</strong>: Improve asynchronous operations</li>
+</ul>
+<h3 id="documentation-contributions">📚 Documentation Contributions<a class="headerlink" href="#documentation-contributions" title="Permanent link">&para;</a></h3>
+<h4 id="user-documentation">User Documentation<a class="headerlink" href="#user-documentation" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>Getting Started Guides</strong>: Help new users understand the ecosystem</li>
+<li><strong>API Reference</strong>: Comprehensive API documentation</li>
+<li><strong>Tutorials</strong>: Step-by-step guides for common use cases</li>
+<li><strong>Best Practices</strong>: Security, performance, and architecture guidelines</li>
+</ul>
+<h4 id="developer-documentation">Developer Documentation<a class="headerlink" href="#developer-documentation" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>Architecture Documentation</strong>: System design and architecture decisions</li>
+<li><strong>Development Setup</strong>: Local development environment setup</li>
+<li><strong>Testing Guidelines</strong>: How to write and run tests</li>
+<li><strong>Release Process</strong>: Documentation for maintainers</li>
+</ul>
+<h3 id="testing-contributions">🧪 Testing Contributions<a class="headerlink" href="#testing-contributions" title="Permanent link">&para;</a></h3>
+<h4 id="unit-tests">Unit Tests<a class="headerlink" href="#unit-tests" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>Component Testing</strong>: Test individual components in isolation</li>
+<li><strong>Service Testing</strong>: Test service-level functionality</li>
+<li><strong>Integration Testing</strong>: Test component interactions</li>
+<li><strong>Edge Case Testing</strong>: Test boundary conditions and error scenarios</li>
+</ul>
+<h4 id="end-to-end-tests">End-to-End Tests<a class="headerlink" href="#end-to-end-tests" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>User Journey Testing</strong>: Test complete user workflows</li>
+<li><strong>API Testing</strong>: Test API endpoints and responses</li>
+<li><strong>Security Testing</strong>: Test authentication and authorization</li>
+<li><strong>Performance Testing</strong>: Test system performance under load</li>
+</ul>
+<h3 id="design-contributions">🎨 Design Contributions<a class="headerlink" href="#design-contributions" title="Permanent link">&para;</a></h3>
+<h4 id="uiux-improvements">UI/UX Improvements<a class="headerlink" href="#uiux-improvements" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>Portal Interface</strong>: Improve the management portal interface</li>
+<li><strong>Documentation Design</strong>: Enhance documentation layout and usability</li>
+<li><strong>Error Messages</strong>: Improve error message clarity and helpfulness</li>
+<li><strong>Mobile Responsiveness</strong>: Ensure good mobile experience</li>
+</ul>
+<h4 id="visual-assets">Visual Assets<a class="headerlink" href="#visual-assets" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>Icons and Graphics</strong>: Create icons, diagrams, and illustrations</li>
+<li><strong>Branding</strong>: Consistent visual identity across projects</li>
+<li><strong>Screenshots</strong>: Keep documentation screenshots up to date</li>
+<li><strong>Architecture Diagrams</strong>: Visual representations of system architecture</li>
+</ul>
+<h2 id="development-guidelines">🛠️ Development Guidelines<a class="headerlink" href="#development-guidelines" title="Permanent link">&para;</a></h2>
+<h3 id="code-style">Code Style<a class="headerlink" href="#code-style" title="Permanent link">&para;</a></h3>
+<h4 id="python-projects">Python Projects<a class="headerlink" href="#python-projects" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="c1"># Use Black for formatting</span>
+<span class="n">black</span> <span class="o">.</span>
+
+<span class="c1"># Use flake8 for linting</span>
+<span class="n">flake8</span> <span class="o">.</span>
+
+<span class="c1"># Use mypy for type checking</span>
+<span class="n">mypy</span> <span class="o">.</span>
+
+<span class="c1"># Follow PEP 8 conventions</span>
+<span class="c1"># Use type hints</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">process_request</span><span class="p">(</span><span class="n">request</span><span class="p">:</span> <span class="n">Request</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Response</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Process an incoming request.&quot;&quot;&quot;</span>
+    <span class="k">pass</span>
+</code></pre></div>
+<h4 id="typescriptjavascript-projects">TypeScript/JavaScript Projects<a class="headerlink" href="#typescriptjavascript-projects" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="c1">// Use ESLint and Prettier</span>
+<span class="nx">npm</span><span class="w"> </span><span class="nx">run</span><span class="w"> </span><span class="nx">lint</span>
+<span class="nx">npm</span><span class="w"> </span><span class="nx">run</span><span class="w"> </span><span class="nx">format</span>
+
+<span class="c1">// Use strict TypeScript</span>
+<span class="c1">// Add JSDoc comments for public APIs</span>
+<span class="cm">/**</span>
+<span class="cm"> * Process an incoming request</span>
+<span class="cm"> * @param request - The request to process</span>
+<span class="cm"> * @returns The processed response</span>
+<span class="cm"> */</span>
+<span class="k">async</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">processRequest</span><span class="p">(</span><span class="nx">request</span><span class="o">:</span><span class="w"> </span><span class="kt">Request</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="nb">Promise</span><span class="o">&lt;</span><span class="nx">Response</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// Implementation</span>
+<span class="p">}</span>
+</code></pre></div>
+<h4 id="java-projects">Java Projects<a class="headerlink" href="#java-projects" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="c1">// Use Checkstyle for style checking</span>
+<span class="n">mvn</span><span class="w"> </span><span class="n">checkstyle</span><span class="p">:</span><span class="n">check</span>
+
+<span class="c1">// Use SpotBugs for bug detection</span>
+<span class="n">mvn</span><span class="w"> </span><span class="n">spotbugs</span><span class="p">:</span><span class="n">check</span>
+
+<span class="c1">// Follow Google Java Style Guide</span>
+<span class="c1">// Add JavaDoc for public APIs</span>
+<span class="cm">/**</span>
+<span class="cm"> * Process an incoming request.</span>
+<span class="cm"> * @param request The request to process</span>
+<span class="cm"> * @return The processed response</span>
+<span class="cm"> */</span>
+<span class="kd">public</span><span class="w"> </span><span class="n">Response</span><span class="w"> </span><span class="nf">processRequest</span><span class="p">(</span><span class="n">Request</span><span class="w"> </span><span class="n">request</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// Implementation</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="testing-guidelines">Testing Guidelines<a class="headerlink" href="#testing-guidelines" title="Permanent link">&para;</a></h3>
+<h4 id="test-structure">Test Structure<a class="headerlink" href="#test-structure" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="c1"># Python test structure</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">test_feature_success</span><span class="p">():</span>
+    <span class="c1"># Arrange</span>
+    <span class="n">setup_test_data</span><span class="p">()</span>
+
+    <span class="c1"># Act</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">feature_under_test</span><span class="p">()</span>
+
+    <span class="c1"># Assert</span>
+    <span class="k">assert</span> <span class="n">result</span><span class="o">.</span><span class="n">is_success</span><span class="p">()</span>
+    <span class="k">assert</span> <span class="n">result</span><span class="o">.</span><span class="n">data</span> <span class="o">==</span> <span class="n">expected_data</span>
+</code></pre></div>
+<h4 id="test-coverage">Test Coverage<a class="headerlink" href="#test-coverage" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>Minimum Coverage</strong>: 80% code coverage for new features</li>
+<li><strong>Critical Paths</strong>: 100% coverage for security-critical code</li>
+<li><strong>Edge Cases</strong>: Test error conditions and boundary values</li>
+<li><strong>Integration Tests</strong>: Test component interactions</li>
+</ul>
+<h3 id="documentation-standards">Documentation Standards<a class="headerlink" href="#documentation-standards" title="Permanent link">&para;</a></h3>
+<h4 id="code-documentation">Code Documentation<a class="headerlink" href="#code-documentation" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">authenticate_user</span><span class="p">(</span><span class="n">credentials</span><span class="p">:</span> <span class="n">Credentials</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">AuthResult</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Authenticate a user with the provided credentials.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        credentials: User credentials containing username and password</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        AuthResult containing success status and user information</span>
+
+<span class="sd">    Raises:</span>
+<span class="sd">        AuthenticationError: If credentials are invalid</span>
+<span class="sd">        RateLimitError: If too many attempts have been made</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+</code></pre></div>
+<h4 id="api-documentation">API Documentation<a class="headerlink" href="#api-documentation" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="c1"># OpenAPI specification example</span>
+<span class="nt">/api/users</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">post</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">summary</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Create a new user</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">|</span>
+<span class="w">      </span><span class="no">Creates a new user account with the provided information.</span>
+<span class="w">      </span><span class="no">Requires admin privileges.</span>
+<span class="w">    </span><span class="nt">requestBody</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">      </span><span class="nt">content</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">application/json</span><span class="p">:</span>
+<span class="w">          </span><span class="nt">schema</span><span class="p">:</span>
+<span class="w">            </span><span class="nt">$ref</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;#/components/schemas/CreateUserRequest&#39;</span>
+<span class="w">    </span><span class="nt">responses</span><span class="p">:</span>
+<span class="w">      </span><span class="s">&#39;201&#39;</span><span class="p p-Indicator">:</span>
+<span class="w">        </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">User created successfully</span>
+<span class="w">        </span><span class="nt">content</span><span class="p">:</span>
+<span class="w">          </span><span class="nt">application/json</span><span class="p">:</span>
+<span class="w">            </span><span class="nt">schema</span><span class="p">:</span>
+<span class="w">              </span><span class="nt">$ref</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;#/components/schemas/User&#39;</span>
+</code></pre></div>
+<h2 id="pull-request-process">🔄 Pull Request Process<a class="headerlink" href="#pull-request-process" title="Permanent link">&para;</a></h2>
+<h3 id="1-before-creating-a-pr">1. Before Creating a PR<a class="headerlink" href="#1-before-creating-a-pr" title="Permanent link">&para;</a></h3>
+<h4 id="check-for-existing-work">Check for Existing Work<a class="headerlink" href="#check-for-existing-work" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Search existing issues and PRs</li>
+<li>Check the project roadmap</li>
+<li>Discuss major changes in GitHub Discussions</li>
+</ul>
+<h4 id="prepare-your-changes">Prepare Your Changes<a class="headerlink" href="#prepare-your-changes" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Ensure tests pass locally</li>
+<li>Update documentation</li>
+<li>Check code style and linting</li>
+<li>Verify backwards compatibility</li>
+</ul>
+<h3 id="2-creating-the-pr">2. Creating the PR<a class="headerlink" href="#2-creating-the-pr" title="Permanent link">&para;</a></h3>
+<h4 id="pr-title-format">PR Title Format<a class="headerlink" href="#pr-title-format" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code>type(scope): description
+
+Examples:
+feat(auth): add OAuth2 authentication support
+fix(registry): resolve database connection timeout
+docs(api): update authentication endpoint documentation
+test(sdk): add integration tests for Java SDK
+</code></pre></div>
+<h4 id="pr-description-template">PR Description Template<a class="headerlink" href="#pr-description-template" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="gu">## Description</span>
+Brief description of the changes made.
+
+<span class="gu">## Type of Change</span>
+<span class="k">- [ ]</span> Bug fix (non-breaking change which fixes an issue)
+<span class="k">- [ ]</span> New feature (non-breaking change which adds functionality)
+<span class="k">- [ ]</span> Breaking change (fix or feature that would cause existing functionality to not work as expected)
+<span class="k">- [ ]</span> Documentation update
+
+<span class="gu">## Testing</span>
+<span class="k">- [ ]</span> Tests pass locally
+<span class="k">- [ ]</span> Added tests for new functionality
+<span class="k">- [ ]</span> Manual testing completed
+
+<span class="gu">## Checklist</span>
+<span class="k">- [ ]</span> My code follows the project&#39;s style guidelines
+<span class="k">- [ ]</span> I have performed a self-review of my own code
+<span class="k">- [ ]</span> I have commented my code, particularly in hard-to-understand areas
+<span class="k">- [ ]</span> I have made corresponding changes to the documentation
+<span class="k">- [ ]</span> My changes generate no new warnings
+<span class="k">- [ ]</span> I have added tests that prove my fix is effective or that my feature works
+<span class="k">- [ ]</span> New and existing unit tests pass locally with my changes
+</code></pre></div>
+<h3 id="3-code-review-process">3. Code Review Process<a class="headerlink" href="#3-code-review-process" title="Permanent link">&para;</a></h3>
+<h4 id="review-criteria">Review Criteria<a class="headerlink" href="#review-criteria" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>Functionality</strong>: Does the code work as intended?</li>
+<li><strong>Code Quality</strong>: Is the code clean, readable, and maintainable?</li>
+<li><strong>Testing</strong>: Are there adequate tests for the changes?</li>
+<li><strong>Documentation</strong>: Is the documentation updated appropriately?</li>
+<li><strong>Security</strong>: Are there any security implications?</li>
+<li><strong>Performance</strong>: Are there any performance impacts?</li>
+</ul>
+<h4 id="responding-to-reviews">Responding to Reviews<a class="headerlink" href="#responding-to-reviews" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>Be Responsive</strong>: Address feedback promptly</li>
+<li><strong>Be Open</strong>: Welcome suggestions and improvements</li>
+<li><strong>Explain Decisions</strong>: Justify your implementation choices</li>
+<li><strong>Ask Questions</strong>: Clarify unclear feedback</li>
+</ul>
+<h2 id="issue-management">🏷️ Issue Management<a class="headerlink" href="#issue-management" title="Permanent link">&para;</a></h2>
+<h3 id="issue-types">Issue Types<a class="headerlink" href="#issue-types" title="Permanent link">&para;</a></h3>
+<h4 id="bug-reports">Bug Reports<a class="headerlink" href="#bug-reports" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="gs">**Bug Description**</span>
+A clear and concise description of what the bug is.
+
+<span class="gs">**To Reproduce**</span>
+Steps to reproduce the behavior:
+<span class="k">1.</span> Go to &#39;...&#39;
+<span class="k">2.</span> Click on &#39;....&#39;
+<span class="k">3.</span> Scroll down to &#39;....&#39;
+<span class="k">4.</span> See error
+
+<span class="gs">**Expected Behavior**</span>
+A clear and concise description of what you expected to happen.
+
+<span class="gs">**Screenshots**</span>
+If applicable, add screenshots to help explain your problem.
+
+<span class="gs">**Environment**</span>
+<span class="k">-</span><span class="w"> </span>OS: [e.g. Windows 10, Ubuntu 20.04]
+<span class="k">-</span><span class="w"> </span>Browser: [e.g. Chrome, Firefox]
+<span class="k">-</span><span class="w"> </span>Version: [e.g. 1.0.0]
+
+<span class="gs">**Additional Context**</span>
+Add any other context about the problem here.
+</code></pre></div>
+<h4 id="feature-requests">Feature Requests<a class="headerlink" href="#feature-requests" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="gs">**Is your feature request related to a problem?**</span>
+A clear and concise description of what the problem is.
+
+<span class="gs">**Describe the solution you&#39;d like**</span>
+A clear and concise description of what you want to happen.
+
+<span class="gs">**Describe alternatives you&#39;ve considered**</span>
+A clear and concise description of any alternative solutions or features you&#39;ve considered.
+
+<span class="gs">**Additional context**</span>
+Add any other context or screenshots about the feature request here.
+</code></pre></div>
+<h3 id="issue-labels">Issue Labels<a class="headerlink" href="#issue-labels" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Label</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>bug</code></td>
+<td>Something isn't working</td>
+</tr>
+<tr>
+<td><code>enhancement</code></td>
+<td>New feature or request</td>
+</tr>
+<tr>
+<td><code>documentation</code></td>
+<td>Improvements or additions to documentation</td>
+</tr>
+<tr>
+<td><code>good first issue</code></td>
+<td>Good for newcomers</td>
+</tr>
+<tr>
+<td><code>help wanted</code></td>
+<td>Extra attention is needed</td>
+</tr>
+<tr>
+<td><code>priority: high</code></td>
+<td>High priority issue</td>
+</tr>
+<tr>
+<td><code>priority: medium</code></td>
+<td>Medium priority issue</td>
+</tr>
+<tr>
+<td><code>priority: low</code></td>
+<td>Low priority issue</td>
+</tr>
+</tbody>
+</table>
+<h2 id="recognition-and-rewards">🌟 Recognition and Rewards<a class="headerlink" href="#recognition-and-rewards" title="Permanent link">&para;</a></h2>
+<h3 id="contributor-recognition">Contributor Recognition<a class="headerlink" href="#contributor-recognition" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>All Contributors</strong>: Listed in project README and release notes</li>
+<li><strong>Regular Contributors</strong>: Invited to maintainer team</li>
+<li><strong>Significant Contributions</strong>: Featured in community spotlights</li>
+<li><strong>Special Recognition</strong>: Mentioned in project announcements</li>
+</ul>
+<h3 id="maintainer-path">Maintainer Path<a class="headerlink" href="#maintainer-path" title="Permanent link">&para;</a></h3>
+<p>Active contributors may be invited to become maintainers:</p>
+<h4 id="maintainer-responsibilities">Maintainer Responsibilities<a class="headerlink" href="#maintainer-responsibilities" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>Code Review</strong>: Review and approve pull requests</li>
+<li><strong>Issue Management</strong>: Triage and manage issues</li>
+<li><strong>Release Management</strong>: Help with release planning and execution</li>
+<li><strong>Community Support</strong>: Help new contributors get started</li>
+</ul>
+<h4 id="maintainer-requirements">Maintainer Requirements<a class="headerlink" href="#maintainer-requirements" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>Consistent Contributions</strong>: Regular, quality contributions over time</li>
+<li><strong>Technical Knowledge</strong>: Deep understanding of the codebase</li>
+<li><strong>Communication Skills</strong>: Good communication with community members</li>
+<li><strong>Commitment</strong>: Ability to dedicate time to maintainer duties</li>
+</ul>
+<h2 id="security">🔒 Security<a class="headerlink" href="#security" title="Permanent link">&para;</a></h2>
+<h3 id="security-vulnerabilities">Security Vulnerabilities<a class="headerlink" href="#security-vulnerabilities" title="Permanent link">&para;</a></h3>
+<p>If you discover a security vulnerability:</p>
+<ol>
+<li><strong>DO NOT</strong> create a public issue</li>
+<li><strong>Email</strong> <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#115;&#101;&#99;&#117;&#114;&#105;&#116;&#121;&#64;&#97;&#117;&#116;&#111;&#103;&#101;&#110;&#116;&#109;&#99;&#112;&#46;&#111;&#114;&#103;">&#115;&#101;&#99;&#117;&#114;&#105;&#116;&#121;&#64;&#97;&#117;&#116;&#111;&#103;&#101;&#110;&#116;&#109;&#99;&#112;&#46;&#111;&#114;&#103;</a> with details</li>
+<li><strong>Include</strong> detailed description and reproduction steps</li>
+<li><strong>Wait</strong> for acknowledgment before public disclosure</li>
+</ol>
+<h3 id="security-best-practices">Security Best Practices<a class="headerlink" href="#security-best-practices" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Input Validation</strong>: Validate all inputs thoroughly</li>
+<li><strong>Authentication</strong>: Implement proper authentication and authorization</li>
+<li><strong>Encryption</strong>: Use encryption for sensitive data</li>
+<li><strong>Dependencies</strong>: Keep dependencies updated</li>
+<li><strong>Code Review</strong>: Security-focused code review for sensitive changes</li>
+</ul>
+<h2 id="license">📄 License<a class="headerlink" href="#license" title="Permanent link">&para;</a></h2>
+<p>All components of the Autogent MCP ecosystem are released under the <strong>MIT License</strong>. This means:</p>
+<h3 id="you-can">✅ You Can<a class="headerlink" href="#you-can" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Use</strong> the software for any purpose, including commercial use</li>
+<li><strong>Modify</strong> the source code to fit your needs</li>
+<li><strong>Distribute</strong> copies of the software</li>
+<li><strong>Sublicense</strong> and sell copies of the software</li>
+<li><strong>Use</strong> the software in proprietary applications</li>
+</ul>
+<h3 id="you-must">❗ You Must<a class="headerlink" href="#you-must" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Include</strong> the copyright notice and license text in any copies</li>
+<li><strong>Preserve</strong> the license and copyright notices</li>
+</ul>
+<h3 id="limitations">🚫 Limitations<a class="headerlink" href="#limitations" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>No Warranty</strong>: The software is provided "as is" without warranty</li>
+<li><strong>No Liability</strong>: Authors are not liable for any damages</li>
+<li><strong>No Trademark</strong>: License doesn't grant trademark rights</li>
+</ul>
+<h3 id="license-text">License Text<a class="headerlink" href="#license-text" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>MIT License
+
+Copyright (c) 2025 Autogent MCP
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the &quot;Software&quot;), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+</code></pre></div>
+<h2 id="getting-help">📞 Getting Help<a class="headerlink" href="#getting-help" title="Permanent link">&para;</a></h2>
+<h3 id="community-support">Community Support<a class="headerlink" href="#community-support" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>GitHub Discussions</strong>: For general questions and discussions</li>
+<li><strong>Discord</strong>: Real-time chat with the community</li>
+<li><strong>Office Hours</strong>: Regular community video calls</li>
+<li><strong>Mentorship Program</strong>: Pair with experienced contributors</li>
+</ul>
+<h3 id="technical-support">Technical Support<a class="headerlink" href="#technical-support" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Documentation</strong>: Comprehensive guides and API references</li>
+<li><strong>Examples</strong>: Working code examples and demos</li>
+<li><strong>Troubleshooting</strong>: Common issues and solutions</li>
+<li><strong>FAQ</strong>: Frequently asked questions</li>
+</ul>
+<h2 id="thank-you">🎉 Thank You!<a class="headerlink" href="#thank-you" title="Permanent link">&para;</a></h2>
+<p>Thank you for contributing to the Autogent MCP ecosystem! Your contributions help make the project better for everyone. Whether you're fixing a bug, adding a feature, improving documentation, or helping other users, your efforts are appreciated.</p>
+<h3 id="join-our-community">Join Our Community<a class="headerlink" href="#join-our-community" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>GitHub</strong>: Follow our repositories for updates</li>
+<li><strong>Twitter</strong>: Follow @autogentmcp for announcements</li>
+<li><strong>LinkedIn</strong>: Connect with the team and other contributors</li>
+<li><strong>Newsletter</strong>: Subscribe for monthly updates</li>
+</ul>
+<hr />
+<p><strong>Happy Contributing!</strong> 🚀</p>
+<p><em>This guide is living documentation. If you have suggestions for improvements, please contribute to this guide as well!</em></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+    <a href="https://github.com/autogentmcp/docs" target="_blank" rel="noopener" title="GitHub" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "navigation.top", "content.code.annotate", "content.tabs.link", "content.tabs.code"], "search": "../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.13a4f30d.min.js"></script>
+      
+    
+  </body>
+</html>

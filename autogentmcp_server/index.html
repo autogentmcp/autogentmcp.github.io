@@ -1,0 +1,3207 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://autogentmcp.github.io/autogentmcp_server/">
+      
+      
+        <link rel="prev" href="../mcp-registry/">
+      
+      
+        <link rel="next" href="../mcp-core-java/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
+    
+    
+      
+        <title>Main Server - Autogent MCP Ecosystem Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.342714a4.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#autogent-mcp-server" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Autogent MCP Ecosystem Docs" class="md-header__button md-logo" aria-label="Autogent MCP Ecosystem Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Autogent MCP Ecosystem Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Main Server
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Overview
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../portal/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  MCP Portal
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../mcp-registry/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  MCP Registry Server
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="./" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Main Server
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../mcp-core-java/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  MCP Core Java SDK
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../mcp-core-python/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  MCP Core Python SDK
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../mcp-core-node/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  MCP Core Node SDK
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../mcp-demo-apps/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  MCP Demo Apps
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../diagrams/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Ecosystem Diagrams
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../deployment/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Production Deployment
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../contributing/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Contributing Guide
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../license-setup/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  License Setup
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Autogent MCP Ecosystem Docs" class="md-nav__button md-logo" aria-label="Autogent MCP Ecosystem Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Autogent MCP Ecosystem Docs
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../portal/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    MCP Portal
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mcp-registry/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    MCP Registry Server
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Main Server
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Main Server
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#features" class="md-nav__link">
+    <span class="md-ellipsis">
+      🚀 Features
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      🏗️ Architecture
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔧 Installation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🔧 Installation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prerequisites
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-1-clone-and-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 1: Clone and Setup
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-configure-environment" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 2: Configure Environment
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3-setup-ollama" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 3: Setup Ollama
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-4-start-the-server" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 4: Start the Server
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#core-concepts" class="md-nav__link">
+    <span class="md-ellipsis">
+      📚 Core Concepts
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📚 Core Concepts">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#query-processing-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      Query Processing Flow
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#session-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      Session Management
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#authentication-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      🛡️ Authentication System
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🛡️ Authentication System">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#supported-authentication-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      Supported Authentication Methods
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Supported Authentication Methods">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-api-key-api_key" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. API Key (api_key)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-bearer-token-bearer_token" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Bearer Token (bearer_token)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-basic-authentication-basic_auth" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Basic Authentication (basic_auth)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-oauth2-oauth2" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. OAuth2 (oauth2)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-jwt-token-jwt" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. JWT Token (jwt)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-azure-subscription-azure_subscription" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Azure Subscription (azure_subscription)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7-azure-apim-azure_apim" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. Azure APIM (azure_apim)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#8-aws-iam-aws_iam" class="md-nav__link">
+    <span class="md-ellipsis">
+      8. AWS IAM (aws_iam)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#9-gcp-service-account-gcp_service_account" class="md-nav__link">
+    <span class="md-ellipsis">
+      9. GCP Service Account (gcp_service_account)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#10-signature-authentication-signature_auth" class="md-nav__link">
+    <span class="md-ellipsis">
+      10. Signature Authentication (signature_auth)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#11-custom-authentication-custom" class="md-nav__link">
+    <span class="md-ellipsis">
+      11. Custom Authentication (custom)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#custom-headers-support" class="md-nav__link">
+    <span class="md-ellipsis">
+      Custom Headers Support
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#api-reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔧 API Reference
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🔧 API Reference">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#query-processing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Query Processing
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Query Processing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#process-query" class="md-nav__link">
+    <span class="md-ellipsis">
+      Process Query
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#session-management_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Session Management
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Session Management">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#list-sessions" class="md-nav__link">
+    <span class="md-ellipsis">
+      List Sessions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-session-details" class="md-nav__link">
+    <span class="md-ellipsis">
+      Get Session Details
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#clear-session" class="md-nav__link">
+    <span class="md-ellipsis">
+      Clear Session
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#registry-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      Registry Management
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Registry Management">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#manual-registry-sync" class="md-nav__link">
+    <span class="md-ellipsis">
+      Manual Registry Sync
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-registry-status" class="md-nav__link">
+    <span class="md-ellipsis">
+      Get Registry Status
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#authentication-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      Authentication Management
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Authentication Management">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#generate-authentication-headers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Generate Authentication Headers
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#set-credential-fallback" class="md-nav__link">
+    <span class="md-ellipsis">
+      Set Credential (Fallback)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-registry-agents" class="md-nav__link">
+    <span class="md-ellipsis">
+      Get Registry Agents
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vault-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      Vault Management
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Vault Management">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#vault-statistics" class="md-nav__link">
+    <span class="md-ellipsis">
+      Vault Statistics
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#clear-vault-cache" class="md-nav__link">
+    <span class="md-ellipsis">
+      Clear Vault Cache
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test-credential-processing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Test Credential Processing
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#usage-examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      🎯 Usage Examples
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🎯 Usage Examples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#basic-query-processing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Basic Query Processing
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#session-based-conversation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Session-Based Conversation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#multi-step-workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      Multi-Step Workflow
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#registry-integration" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔄 Registry Integration
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🔄 Registry Integration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#registry-data-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      Registry Data Structure
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#auto-sync-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Auto-Sync Configuration
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#llm-integration" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧠 LLM Integration
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🧠 LLM Integration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ollama-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ollama Configuration
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#openai-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      OpenAI Configuration
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#custom-llm-prompts" class="md-nav__link">
+    <span class="md-ellipsis">
+      Custom LLM Prompts
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#security-best-practices" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔒 Security Best Practices
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🔒 Security Best Practices">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#vault-security" class="md-nav__link">
+    <span class="md-ellipsis">
+      Vault Security
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#network-security" class="md-nav__link">
+    <span class="md-ellipsis">
+      Network Security
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#api-security" class="md-nav__link">
+    <span class="md-ellipsis">
+      API Security
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#monitoring-and-observability" class="md-nav__link">
+    <span class="md-ellipsis">
+      📊 Monitoring and Observability
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📊 Monitoring and Observability">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#health-checks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Health Checks
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#metrics-collection" class="md-nav__link">
+    <span class="md-ellipsis">
+      Metrics Collection
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#logging-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Logging Configuration
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#production-deployment" class="md-nav__link">
+    <span class="md-ellipsis">
+      🚀 Production Deployment
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🚀 Production Deployment">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#docker-deployment" class="md-nav__link">
+    <span class="md-ellipsis">
+      Docker Deployment
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kubernetes-deployment" class="md-nav__link">
+    <span class="md-ellipsis">
+      Kubernetes Deployment
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#environment-specific-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Environment-Specific Configuration
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#troubleshooting" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔍 Troubleshooting
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🔍 Troubleshooting">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#common-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      Common Issues
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Common Issues">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#registry-connection-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      Registry Connection Issues
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vault-authentication-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      Vault Authentication Issues
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#llm-processing-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      LLM Processing Issues
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#debug-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      Debug Mode
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#performance-troubleshooting" class="md-nav__link">
+    <span class="md-ellipsis">
+      Performance Troubleshooting
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#contributing" class="md-nav__link">
+    <span class="md-ellipsis">
+      🤝 Contributing
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#license" class="md-nav__link">
+    <span class="md-ellipsis">
+      📄 License
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mcp-core-java/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    MCP Core Java SDK
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mcp-core-python/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    MCP Core Python SDK
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mcp-core-node/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    MCP Core Node SDK
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mcp-demo-apps/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    MCP Demo Apps
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../diagrams/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Ecosystem Diagrams
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deployment/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Production Deployment
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contributing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Contributing Guide
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../license-setup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    License Setup
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#features" class="md-nav__link">
+    <span class="md-ellipsis">
+      🚀 Features
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      🏗️ Architecture
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔧 Installation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🔧 Installation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prerequisites
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-1-clone-and-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 1: Clone and Setup
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-configure-environment" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 2: Configure Environment
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3-setup-ollama" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 3: Setup Ollama
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-4-start-the-server" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 4: Start the Server
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#core-concepts" class="md-nav__link">
+    <span class="md-ellipsis">
+      📚 Core Concepts
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📚 Core Concepts">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#query-processing-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      Query Processing Flow
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#session-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      Session Management
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#authentication-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      🛡️ Authentication System
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🛡️ Authentication System">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#supported-authentication-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      Supported Authentication Methods
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Supported Authentication Methods">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-api-key-api_key" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. API Key (api_key)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-bearer-token-bearer_token" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Bearer Token (bearer_token)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-basic-authentication-basic_auth" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Basic Authentication (basic_auth)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-oauth2-oauth2" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. OAuth2 (oauth2)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-jwt-token-jwt" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. JWT Token (jwt)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-azure-subscription-azure_subscription" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Azure Subscription (azure_subscription)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7-azure-apim-azure_apim" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. Azure APIM (azure_apim)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#8-aws-iam-aws_iam" class="md-nav__link">
+    <span class="md-ellipsis">
+      8. AWS IAM (aws_iam)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#9-gcp-service-account-gcp_service_account" class="md-nav__link">
+    <span class="md-ellipsis">
+      9. GCP Service Account (gcp_service_account)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#10-signature-authentication-signature_auth" class="md-nav__link">
+    <span class="md-ellipsis">
+      10. Signature Authentication (signature_auth)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#11-custom-authentication-custom" class="md-nav__link">
+    <span class="md-ellipsis">
+      11. Custom Authentication (custom)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#custom-headers-support" class="md-nav__link">
+    <span class="md-ellipsis">
+      Custom Headers Support
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#api-reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔧 API Reference
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🔧 API Reference">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#query-processing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Query Processing
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Query Processing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#process-query" class="md-nav__link">
+    <span class="md-ellipsis">
+      Process Query
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#session-management_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Session Management
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Session Management">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#list-sessions" class="md-nav__link">
+    <span class="md-ellipsis">
+      List Sessions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-session-details" class="md-nav__link">
+    <span class="md-ellipsis">
+      Get Session Details
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#clear-session" class="md-nav__link">
+    <span class="md-ellipsis">
+      Clear Session
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#registry-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      Registry Management
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Registry Management">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#manual-registry-sync" class="md-nav__link">
+    <span class="md-ellipsis">
+      Manual Registry Sync
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-registry-status" class="md-nav__link">
+    <span class="md-ellipsis">
+      Get Registry Status
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#authentication-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      Authentication Management
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Authentication Management">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#generate-authentication-headers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Generate Authentication Headers
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#set-credential-fallback" class="md-nav__link">
+    <span class="md-ellipsis">
+      Set Credential (Fallback)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-registry-agents" class="md-nav__link">
+    <span class="md-ellipsis">
+      Get Registry Agents
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vault-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      Vault Management
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Vault Management">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#vault-statistics" class="md-nav__link">
+    <span class="md-ellipsis">
+      Vault Statistics
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#clear-vault-cache" class="md-nav__link">
+    <span class="md-ellipsis">
+      Clear Vault Cache
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test-credential-processing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Test Credential Processing
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#usage-examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      🎯 Usage Examples
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🎯 Usage Examples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#basic-query-processing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Basic Query Processing
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#session-based-conversation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Session-Based Conversation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#multi-step-workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      Multi-Step Workflow
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#registry-integration" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔄 Registry Integration
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🔄 Registry Integration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#registry-data-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      Registry Data Structure
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#auto-sync-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Auto-Sync Configuration
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#llm-integration" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧠 LLM Integration
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🧠 LLM Integration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ollama-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ollama Configuration
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#openai-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      OpenAI Configuration
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#custom-llm-prompts" class="md-nav__link">
+    <span class="md-ellipsis">
+      Custom LLM Prompts
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#security-best-practices" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔒 Security Best Practices
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🔒 Security Best Practices">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#vault-security" class="md-nav__link">
+    <span class="md-ellipsis">
+      Vault Security
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#network-security" class="md-nav__link">
+    <span class="md-ellipsis">
+      Network Security
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#api-security" class="md-nav__link">
+    <span class="md-ellipsis">
+      API Security
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#monitoring-and-observability" class="md-nav__link">
+    <span class="md-ellipsis">
+      📊 Monitoring and Observability
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📊 Monitoring and Observability">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#health-checks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Health Checks
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#metrics-collection" class="md-nav__link">
+    <span class="md-ellipsis">
+      Metrics Collection
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#logging-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Logging Configuration
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#production-deployment" class="md-nav__link">
+    <span class="md-ellipsis">
+      🚀 Production Deployment
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🚀 Production Deployment">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#docker-deployment" class="md-nav__link">
+    <span class="md-ellipsis">
+      Docker Deployment
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kubernetes-deployment" class="md-nav__link">
+    <span class="md-ellipsis">
+      Kubernetes Deployment
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#environment-specific-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Environment-Specific Configuration
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#troubleshooting" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔍 Troubleshooting
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🔍 Troubleshooting">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#common-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      Common Issues
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Common Issues">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#registry-connection-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      Registry Connection Issues
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vault-authentication-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      Vault Authentication Issues
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#llm-processing-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      LLM Processing Issues
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#debug-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      Debug Mode
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#performance-troubleshooting" class="md-nav__link">
+    <span class="md-ellipsis">
+      Performance Troubleshooting
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#contributing" class="md-nav__link">
+    <span class="md-ellipsis">
+      🤝 Contributing
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#license" class="md-nav__link">
+    <span class="md-ellipsis">
+      📄 License
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="autogent-mcp-server">Autogent MCP Server<a class="headerlink" href="#autogent-mcp-server" title="Permanent link">&para;</a></h1>
+<p>A sophisticated FastAPI-based Model Context Protocol (MCP) server that provides intelligent query processing, dynamic agent/tool discovery, and comprehensive authentication with vault integration. Built with LLM-powered orchestration using LangGraph and Ollama.</p>
+<h2 id="features">🚀 Features<a class="headerlink" href="#features" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>🤖 LLM-Powered Orchestration</strong>: Uses Ollama/OpenAI for intelligent tool selection and query processing</li>
+<li><strong>🔍 Dynamic Agent Discovery</strong>: Automatically fetches and updates agent/tool metadata from registry</li>
+<li><strong>🛡️ Comprehensive Authentication</strong>: 11 authentication methods with vault integration</li>
+<li><strong>🔐 Multi-Vault Support</strong>: HashiCorp Vault, Azure Key Vault, AWS Secrets Manager, GCP Secret Manager, Akeyless</li>
+<li><strong>💬 Session Management</strong>: Maintains conversation context across multiple interactions</li>
+<li><strong>📊 Smart Caching</strong>: Intelligent credential caching with TTL-based expiration</li>
+<li><strong>🔄 Auto-Sync</strong>: Background registry synchronization every 5 minutes</li>
+<li><strong>📈 Production Ready</strong>: Optimized for enterprise environments with monitoring and logging</li>
+</ul>
+<h2 id="architecture">🏗️ Architecture<a class="headerlink" href="#architecture" title="Permanent link">&para;</a></h2>
+<pre class="mermaid"><code>graph TB
+    subgraph "Client Layer"
+        A[Client Applications]
+        B[Web Interface]
+        C[API Clients]
+    end
+
+    subgraph "Autogent MCP Server"
+        D[FastAPI Application]
+        E[LangGraph Router]
+        F[LLM Client]
+        G[Tool Selector]
+        H[Endpoint Invoker]
+        I[Authentication Handler]
+        J[Session Manager]
+    end
+
+    subgraph "External Services"
+        K[MCP Registry]
+        L[Ollama/OpenAI]
+        M[Vault Systems]
+        N[Application Endpoints]
+    end
+
+    A --&gt; D
+    B --&gt; D
+    C --&gt; D
+    D --&gt; E
+    E --&gt; F
+    E --&gt; G
+    E --&gt; H
+    E --&gt; I
+    E --&gt; J
+    F --&gt; L
+    G --&gt; K
+    I --&gt; M
+    H --&gt; N
+
+    style D fill:#e1f5fe
+    style E fill:#f3e5f5
+    style I fill:#fff3e0
+    style M fill:#e8f5e8</code></pre>
+<h2 id="installation">🔧 Installation<a class="headerlink" href="#installation" title="Permanent link">&para;</a></h2>
+<h3 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Python 3.9+</li>
+<li>Ollama server (for LLM processing)</li>
+<li>Access to MCP Registry Server</li>
+<li>Vault system (HashiCorp Vault, Azure Key Vault, etc.)</li>
+</ul>
+<h3 id="step-1-clone-and-setup">Step 1: Clone and Setup<a class="headerlink" href="#step-1-clone-and-setup" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/autogentmcp/autogentmcp_server.git
+<span class="nb">cd</span><span class="w"> </span>autogentmcp_server
+
+<span class="c1"># Create virtual environment</span>
+python<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>venv
+<span class="nb">source</span><span class="w"> </span>venv/bin/activate<span class="w">  </span><span class="c1"># On Windows: venv\Scripts\activate</span>
+
+<span class="c1"># Install dependencies</span>
+pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>requirements.txt
+</code></pre></div>
+<h3 id="step-2-configure-environment">Step 2: Configure Environment<a class="headerlink" href="#step-2-configure-environment" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># Copy environment template</span>
+cp<span class="w"> </span>.env.example<span class="w"> </span>.env
+
+<span class="c1"># Edit configuration</span>
+nano<span class="w"> </span>.env
+</code></pre></div>
+<p><strong>Core Configuration:</strong>
+<div class="highlight"><pre><span></span><code># Registry Configuration
+REGISTRY_URL=http://localhost:8000/applications/with-endpoints
+REGISTRY_ENVIRONMENT=production
+REGISTRY_SYNC_INTERVAL=300
+
+# LLM Configuration
+OLLAMA_BASE_URL=http://localhost:11434
+OLLAMA_MODEL=qwen2.5:14b
+LLM_TEMPERATURE=0.1
+LLM_MAX_TOKENS=2000
+
+# Authentication
+DEFAULT_API_KEY=your-default-api-key
+DEFAULT_BEARER_TOKEN=your-default-token
+
+# Vault Configuration (choose one)
+VAULT_TYPE=hashicorp
+VAULT_URL=https://vault.example.com:8200
+VAULT_TOKEN=your-vault-token
+VAULT_NAMESPACE=development
+VAULT_PATH=autogentmcp
+</code></pre></div></p>
+<p><strong>Vault-Specific Configuration:</strong></p>
+<div class="tabbed-set" data-tabs="1:5"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><label for="__tabbed_1_1">HashiCorp Vault</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code>VAULT_TYPE=hashicorp
+VAULT_URL=https://vault.example.com:8200
+VAULT_TOKEN=your-vault-token
+VAULT_NAMESPACE=development
+VAULT_PATH=autogentmcp
+VAULT_MOUNT=secret
+VAULT_VERIFY_SSL=true
+</code></pre></div>
+</div>
+<input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><label for="__tabbed_1_2">Azure Key Vault</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code>VAULT_TYPE=azure
+AZURE_KEYVAULT_URL=https://your-vault.vault.azure.net/
+AZURE_CLIENT_ID=your-client-id
+AZURE_CLIENT_SECRET=your-client-secret
+AZURE_TENANT_ID=your-tenant-id
+</code></pre></div>
+</div>
+<input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><label for="__tabbed_1_3">AWS Secrets Manager</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code>VAULT_TYPE=aws
+AWS_DEFAULT_REGION=us-east-1
+AWS_ACCESS_KEY_ID=your-access-key
+AWS_SECRET_ACCESS_KEY=your-secret-key
+</code></pre></div>
+</div>
+<input id="__tabbed_1_4" name="__tabbed_1" type="radio" /><label for="__tabbed_1_4">GCP Secret Manager</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code>VAULT_TYPE=gcp
+GCP_PROJECT_ID=your-project-id
+GOOGLE_APPLICATION_CREDENTIALS=/path/to/service-account.json
+</code></pre></div>
+</div>
+<input id="__tabbed_1_5" name="__tabbed_1" type="radio" /><label for="__tabbed_1_5">Akeyless</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code>VAULT_TYPE=akeyless
+AKEYLESS_URL=https://api.akeyless.io
+AKEYLESS_TOKEN=your-token
+# OR
+AKEYLESS_ACCESS_ID=your-access-id
+AKEYLESS_ACCESS_KEY=your-access-key
+</code></pre></div>
+</div>
+</div>
+<h3 id="step-3-setup-ollama">Step 3: Setup Ollama<a class="headerlink" href="#step-3-setup-ollama" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># Install Ollama</span>
+curl<span class="w"> </span>-fsSL<span class="w"> </span>https://ollama.ai/install.sh<span class="w"> </span><span class="p">|</span><span class="w"> </span>sh
+
+<span class="c1"># Start Ollama service</span>
+ollama<span class="w"> </span>serve
+
+<span class="c1"># Pull the model</span>
+ollama<span class="w"> </span>pull<span class="w"> </span>qwen2.5:14b
+</code></pre></div>
+<h3 id="step-4-start-the-server">Step 4: Start the Server<a class="headerlink" href="#step-4-start-the-server" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># Start the server</span>
+uvicorn<span class="w"> </span>app.main:app<span class="w"> </span>--reload<span class="w"> </span>--host<span class="w"> </span><span class="m">0</span>.0.0.0<span class="w"> </span>--port<span class="w"> </span><span class="m">8001</span>
+</code></pre></div>
+<h2 id="core-concepts">📚 Core Concepts<a class="headerlink" href="#core-concepts" title="Permanent link">&para;</a></h2>
+<h3 id="query-processing-flow">Query Processing Flow<a class="headerlink" href="#query-processing-flow" title="Permanent link">&para;</a></h3>
+<pre class="mermaid"><code>sequenceDiagram
+    participant Client
+    participant Server
+    participant LLM
+    participant Registry
+    participant Vault
+    participant Agent
+
+    Client-&gt;&gt;Server: POST /query
+    Server-&gt;&gt;Registry: Fetch agents/tools
+    Server-&gt;&gt;LLM: Analyze query + available tools
+    LLM-&gt;&gt;Server: Selected tool + parameters
+    Server-&gt;&gt;Vault: Retrieve credentials
+    Server-&gt;&gt;Agent: Invoke tool endpoint
+    Agent-&gt;&gt;Server: Tool response
+    Server-&gt;&gt;LLM: Format response
+    LLM-&gt;&gt;Server: Final response
+    Server-&gt;&gt;Client: Formatted result</code></pre>
+<h3 id="session-management">Session Management<a class="headerlink" href="#session-management" title="Permanent link">&para;</a></h3>
+<p>The server maintains conversation context across multiple interactions:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Session data structure</span>
+<span class="p">{</span>
+    <span class="s2">&quot;session_id&quot;</span><span class="p">:</span> <span class="s2">&quot;user-123&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;conversation_history&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span><span class="s2">&quot;role&quot;</span><span class="p">:</span> <span class="s2">&quot;user&quot;</span><span class="p">,</span> <span class="s2">&quot;content&quot;</span><span class="p">:</span> <span class="s2">&quot;Get user 123&quot;</span><span class="p">},</span>
+        <span class="p">{</span><span class="s2">&quot;role&quot;</span><span class="p">:</span> <span class="s2">&quot;assistant&quot;</span><span class="p">,</span> <span class="s2">&quot;content&quot;</span><span class="p">:</span> <span class="s2">&quot;Retrieved user data...&quot;</span><span class="p">}</span>
+    <span class="p">],</span>
+    <span class="s2">&quot;context&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;last_tool_used&quot;</span><span class="p">:</span> <span class="s2">&quot;get_user&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;last_agent&quot;</span><span class="p">:</span> <span class="s2">&quot;user-service&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;variables&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;current_user_id&quot;</span><span class="p">:</span> <span class="mi">123</span><span class="p">}</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;created_at&quot;</span><span class="p">:</span> <span class="s2">&quot;2024-01-01T10:00:00Z&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;updated_at&quot;</span><span class="p">:</span> <span class="s2">&quot;2024-01-01T10:05:00Z&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+<h2 id="authentication-system">🛡️ Authentication System<a class="headerlink" href="#authentication-system" title="Permanent link">&para;</a></h2>
+<h3 id="supported-authentication-methods">Supported Authentication Methods<a class="headerlink" href="#supported-authentication-methods" title="Permanent link">&para;</a></h3>
+<h4 id="1-api-key-api_key">1. API Key (<code>api_key</code>)<a class="headerlink" href="#1-api-key-api_key" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="c1"># Vault storage</span>
+<span class="p">{</span>
+    <span class="s2">&quot;apiKey&quot;</span><span class="p">:</span> <span class="s2">&quot;base64-encoded-key&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;headerName&quot;</span><span class="p">:</span> <span class="s2">&quot;X-API-Key&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;format&quot;</span><span class="p">:</span> <span class="s2">&quot;direct&quot;</span>
+<span class="p">}</span>
+
+<span class="c1"># Generated headers</span>
+<span class="p">{</span>
+    <span class="s2">&quot;X-API-Key&quot;</span><span class="p">:</span> <span class="s2">&quot;decoded-api-key&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+<h4 id="2-bearer-token-bearer_token">2. Bearer Token (<code>bearer_token</code>)<a class="headerlink" href="#2-bearer-token-bearer_token" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="c1"># Vault storage</span>
+<span class="p">{</span>
+    <span class="s2">&quot;token&quot;</span><span class="p">:</span> <span class="s2">&quot;base64-encoded-token&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;format&quot;</span><span class="p">:</span> <span class="s2">&quot;bearer&quot;</span>
+<span class="p">}</span>
+
+<span class="c1"># Generated headers</span>
+<span class="p">{</span>
+    <span class="s2">&quot;Authorization&quot;</span><span class="p">:</span> <span class="s2">&quot;Bearer decoded-token&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+<h4 id="3-basic-authentication-basic_auth">3. Basic Authentication (<code>basic_auth</code>)<a class="headerlink" href="#3-basic-authentication-basic_auth" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="c1"># Vault storage</span>
+<span class="p">{</span>
+    <span class="s2">&quot;username&quot;</span><span class="p">:</span> <span class="s2">&quot;base64-encoded-username&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;password&quot;</span><span class="p">:</span> <span class="s2">&quot;base64-encoded-password&quot;</span>
+<span class="p">}</span>
+
+<span class="c1"># Generated headers</span>
+<span class="p">{</span>
+    <span class="s2">&quot;Authorization&quot;</span><span class="p">:</span> <span class="s2">&quot;Basic base64(username:password)&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+<h4 id="4-oauth2-oauth2">4. OAuth2 (<code>oauth2</code>)<a class="headerlink" href="#4-oauth2-oauth2" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="c1"># Vault storage</span>
+<span class="p">{</span>
+    <span class="s2">&quot;access_token&quot;</span><span class="p">:</span> <span class="s2">&quot;base64-encoded-token&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;scope&quot;</span><span class="p">:</span> <span class="s2">&quot;read write&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;token_type&quot;</span><span class="p">:</span> <span class="s2">&quot;bearer&quot;</span>
+<span class="p">}</span>
+
+<span class="c1"># Generated headers</span>
+<span class="p">{</span>
+    <span class="s2">&quot;Authorization&quot;</span><span class="p">:</span> <span class="s2">&quot;Bearer access-token&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;X-OAuth-Scope&quot;</span><span class="p">:</span> <span class="s2">&quot;read write&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+<h4 id="5-jwt-token-jwt">5. JWT Token (<code>jwt</code>)<a class="headerlink" href="#5-jwt-token-jwt" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="c1"># Vault storage</span>
+<span class="p">{</span>
+    <span class="s2">&quot;jwt_token&quot;</span><span class="p">:</span> <span class="s2">&quot;base64-encoded-jwt&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;algorithm&quot;</span><span class="p">:</span> <span class="s2">&quot;HS256&quot;</span>
+<span class="p">}</span>
+
+<span class="c1"># Generated headers</span>
+<span class="p">{</span>
+    <span class="s2">&quot;Authorization&quot;</span><span class="p">:</span> <span class="s2">&quot;Bearer jwt-token&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+<h4 id="6-azure-subscription-azure_subscription">6. Azure Subscription (<code>azure_subscription</code>)<a class="headerlink" href="#6-azure-subscription-azure_subscription" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="c1"># Vault storage</span>
+<span class="p">{</span>
+    <span class="s2">&quot;subscription_key&quot;</span><span class="p">:</span> <span class="s2">&quot;base64-encoded-key&quot;</span>
+<span class="p">}</span>
+
+<span class="c1"># Generated headers</span>
+<span class="p">{</span>
+    <span class="s2">&quot;Ocp-Apim-Subscription-Key&quot;</span><span class="p">:</span> <span class="s2">&quot;subscription-key&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+<h4 id="7-azure-apim-azure_apim">7. Azure APIM (<code>azure_apim</code>)<a class="headerlink" href="#7-azure-apim-azure_apim" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="c1"># Vault storage</span>
+<span class="p">{</span>
+    <span class="s2">&quot;apim_key&quot;</span><span class="p">:</span> <span class="s2">&quot;base64-encoded-key&quot;</span>
+<span class="p">}</span>
+
+<span class="c1"># Generated headers</span>
+<span class="p">{</span>
+    <span class="s2">&quot;Ocp-Apim-Subscription-Key&quot;</span><span class="p">:</span> <span class="s2">&quot;apim-key&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+<h4 id="8-aws-iam-aws_iam">8. AWS IAM (<code>aws_iam</code>)<a class="headerlink" href="#8-aws-iam-aws_iam" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="c1"># Vault storage</span>
+<span class="p">{</span>
+    <span class="s2">&quot;access_key&quot;</span><span class="p">:</span> <span class="s2">&quot;base64-encoded-key&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;secret_key&quot;</span><span class="p">:</span> <span class="s2">&quot;base64-encoded-secret&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;region&quot;</span><span class="p">:</span> <span class="s2">&quot;us-east-1&quot;</span>
+<span class="p">}</span>
+
+<span class="c1"># Generated headers (AWS SigV4)</span>
+<span class="p">{</span>
+    <span class="s2">&quot;Authorization&quot;</span><span class="p">:</span> <span class="s2">&quot;AWS4-HMAC-SHA256 Credential=...&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;X-Amz-Date&quot;</span><span class="p">:</span> <span class="s2">&quot;20240101T120000Z&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+<h4 id="9-gcp-service-account-gcp_service_account">9. GCP Service Account (<code>gcp_service_account</code>)<a class="headerlink" href="#9-gcp-service-account-gcp_service_account" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="c1"># Vault storage</span>
+<span class="p">{</span>
+    <span class="s2">&quot;service_account_key&quot;</span><span class="p">:</span> <span class="s2">&quot;base64-encoded-json-key&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;scope&quot;</span><span class="p">:</span> <span class="s2">&quot;https://www.googleapis.com/auth/cloud-platform&quot;</span>
+<span class="p">}</span>
+
+<span class="c1"># Generated headers</span>
+<span class="p">{</span>
+    <span class="s2">&quot;Authorization&quot;</span><span class="p">:</span> <span class="s2">&quot;Bearer access-token&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+<h4 id="10-signature-authentication-signature_auth">10. Signature Authentication (<code>signature_auth</code>)<a class="headerlink" href="#10-signature-authentication-signature_auth" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="c1"># Vault storage</span>
+<span class="p">{</span>
+    <span class="s2">&quot;signature&quot;</span><span class="p">:</span> <span class="s2">&quot;base64-encoded-signature&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;timestamp&quot;</span><span class="p">:</span> <span class="s2">&quot;auto-generated&quot;</span>
+<span class="p">}</span>
+
+<span class="c1"># Generated headers</span>
+<span class="p">{</span>
+    <span class="s2">&quot;X-Signature&quot;</span><span class="p">:</span> <span class="s2">&quot;signature&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;X-Timestamp&quot;</span><span class="p">:</span> <span class="s2">&quot;timestamp&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+<h4 id="11-custom-authentication-custom">11. Custom Authentication (<code>custom</code>)<a class="headerlink" href="#11-custom-authentication-custom" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="c1"># Vault storage</span>
+<span class="p">{</span>
+    <span class="s2">&quot;customHeaders&quot;</span><span class="p">:</span> <span class="s2">&quot;base64-encoded-json&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;template&quot;</span><span class="p">:</span> <span class="s2">&quot;custom-template&quot;</span>
+<span class="p">}</span>
+
+<span class="c1"># Generated headers (from decoded customHeaders)</span>
+<span class="p">{</span>
+    <span class="s2">&quot;X-Custom-Header-1&quot;</span><span class="p">:</span> <span class="s2">&quot;Custom Value 1&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;X-Custom-Header-2&quot;</span><span class="p">:</span> <span class="s2">&quot;Custom Value 2&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="custom-headers-support">Custom Headers Support<a class="headerlink" href="#custom-headers-support" title="Permanent link">&para;</a></h3>
+<p>All authentication methods support additional custom headers:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Vault storage with custom headers</span>
+<span class="p">{</span>
+    <span class="s2">&quot;apiKey&quot;</span><span class="p">:</span> <span class="s2">&quot;base64-encoded-key&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;customHeaders&quot;</span><span class="p">:</span> <span class="s2">&quot;base64-encoded-json&quot;</span>
+<span class="p">}</span>
+
+<span class="c1"># Decoded customHeaders (array format)</span>
+<span class="p">[</span>
+    <span class="p">{</span><span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;X-Custom-Header-1&quot;</span><span class="p">,</span> <span class="s2">&quot;value&quot;</span><span class="p">:</span> <span class="s2">&quot;Custom Value 1&quot;</span><span class="p">},</span>
+    <span class="p">{</span><span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;X-Custom-Header-2&quot;</span><span class="p">,</span> <span class="s2">&quot;value&quot;</span><span class="p">:</span> <span class="s2">&quot;Custom Value 2&quot;</span><span class="p">}</span>
+<span class="p">]</span>
+
+<span class="c1"># Or object format</span>
+<span class="p">{</span>
+    <span class="s2">&quot;X-Custom-Header-1&quot;</span><span class="p">:</span> <span class="s2">&quot;Custom Value 1&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;X-Custom-Header-2&quot;</span><span class="p">:</span> <span class="s2">&quot;Custom Value 2&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+<h2 id="api-reference">🔧 API Reference<a class="headerlink" href="#api-reference" title="Permanent link">&para;</a></h2>
+<h3 id="query-processing">Query Processing<a class="headerlink" href="#query-processing" title="Permanent link">&para;</a></h3>
+<h4 id="process-query">Process Query<a class="headerlink" href="#process-query" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="err">POST /query</span>
+<span class="err">Content-Type: application/json</span>
+
+<span class="err">{</span>
+<span class="err">    &quot;query&quot;: &quot;Get user with ID 123&quot;,</span>
+<span class="err">    &quot;session_id&quot;: &quot;user-session-1&quot;,</span>
+<span class="err">    &quot;context&quot;: {</span>
+<span class="err">        &quot;additional_context&quot;: &quot;value&quot;</span>
+<span class="err">    }</span>
+<span class="err">}</span>
+</code></pre></div>
+<p><strong>Response:</strong>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;response&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Here&#39;s the user information for ID 123: ...&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;session_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;user-session-1&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;tool_used&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;get_user&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;agent_used&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;user-service&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;execution_time&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">1.23</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;metadata&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;confidence&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.95</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;tool_parameters&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">123</span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></p>
+<h3 id="session-management_1">Session Management<a class="headerlink" href="#session-management_1" title="Permanent link">&para;</a></h3>
+<h4 id="list-sessions">List Sessions<a class="headerlink" href="#list-sessions" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="err">GET /sessions</span>
+</code></pre></div>
+<h4 id="get-session-details">Get Session Details<a class="headerlink" href="#get-session-details" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="err">GET /sessions/{session_id}</span>
+</code></pre></div>
+<h4 id="clear-session">Clear Session<a class="headerlink" href="#clear-session" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="err">DELETE /sessions/{session_id}</span>
+</code></pre></div>
+<h3 id="registry-management">Registry Management<a class="headerlink" href="#registry-management" title="Permanent link">&para;</a></h3>
+<h4 id="manual-registry-sync">Manual Registry Sync<a class="headerlink" href="#manual-registry-sync" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="err">POST /sync_registry</span>
+</code></pre></div>
+<h4 id="get-registry-status">Get Registry Status<a class="headerlink" href="#get-registry-status" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="err">GET /registry/status</span>
+</code></pre></div>
+<h3 id="authentication-management">Authentication Management<a class="headerlink" href="#authentication-management" title="Permanent link">&para;</a></h3>
+<h4 id="generate-authentication-headers">Generate Authentication Headers<a class="headerlink" href="#generate-authentication-headers" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="err">POST /auth/generate_headers_with_vault_key</span>
+<span class="err">Content-Type: application/json</span>
+
+<span class="err">{</span>
+<span class="err">    &quot;vault_key&quot;: &quot;env_cmd72flj7000jn5hwd4zv148p_security_settings&quot;,</span>
+<span class="err">    &quot;authentication_method&quot;: &quot;api_key&quot;</span>
+<span class="err">}</span>
+</code></pre></div>
+<h4 id="set-credential-fallback">Set Credential (Fallback)<a class="headerlink" href="#set-credential-fallback" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="err">POST /auth/set_credential</span>
+<span class="err">Content-Type: application/json</span>
+
+<span class="err">{</span>
+<span class="err">    &quot;key&quot;: &quot;app_x29iirgfycp9e92iqkb04_api_key&quot;,</span>
+<span class="err">    &quot;value&quot;: &quot;your-api-key&quot;</span>
+<span class="err">}</span>
+</code></pre></div>
+<h4 id="get-registry-agents">Get Registry Agents<a class="headerlink" href="#get-registry-agents" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="err">GET /auth/registry/agents</span>
+</code></pre></div>
+<h3 id="vault-management">Vault Management<a class="headerlink" href="#vault-management" title="Permanent link">&para;</a></h3>
+<h4 id="vault-statistics">Vault Statistics<a class="headerlink" href="#vault-statistics" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="err">GET /vault/stats</span>
+</code></pre></div>
+<h4 id="clear-vault-cache">Clear Vault Cache<a class="headerlink" href="#clear-vault-cache" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="err">POST /vault/clear_cache</span>
+</code></pre></div>
+<h4 id="test-credential-processing">Test Credential Processing<a class="headerlink" href="#test-credential-processing" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="err">GET /vault/test_credential_processing</span>
+</code></pre></div>
+<h2 id="usage-examples">🎯 Usage Examples<a class="headerlink" href="#usage-examples" title="Permanent link">&para;</a></h2>
+<h3 id="basic-query-processing">Basic Query Processing<a class="headerlink" href="#basic-query-processing" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">requests</span>
+
+<span class="c1"># Process a simple query</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="s2">&quot;http://localhost:8001/query&quot;</span><span class="p">,</span> <span class="n">json</span><span class="o">=</span><span class="p">{</span>
+    <span class="s2">&quot;query&quot;</span><span class="p">:</span> <span class="s2">&quot;Get user information for ID 123&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;session_id&quot;</span><span class="p">:</span> <span class="s2">&quot;user-session-1&quot;</span>
+<span class="p">})</span>
+
+<span class="n">result</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Response: </span><span class="si">{</span><span class="n">result</span><span class="p">[</span><span class="s1">&#39;response&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Tool used: </span><span class="si">{</span><span class="n">result</span><span class="p">[</span><span class="s1">&#39;tool_used&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Agent used: </span><span class="si">{</span><span class="n">result</span><span class="p">[</span><span class="s1">&#39;agent_used&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</code></pre></div>
+<h3 id="session-based-conversation">Session-Based Conversation<a class="headerlink" href="#session-based-conversation" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">requests</span>
+
+<span class="n">session_id</span> <span class="o">=</span> <span class="s2">&quot;conversation-123&quot;</span>
+
+<span class="c1"># First query</span>
+<span class="n">response1</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="s2">&quot;http://localhost:8001/query&quot;</span><span class="p">,</span> <span class="n">json</span><span class="o">=</span><span class="p">{</span>
+    <span class="s2">&quot;query&quot;</span><span class="p">:</span> <span class="s2">&quot;Get user 123&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;session_id&quot;</span><span class="p">:</span> <span class="n">session_id</span>
+<span class="p">})</span>
+
+<span class="c1"># Follow-up query with context</span>
+<span class="n">response2</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="s2">&quot;http://localhost:8001/query&quot;</span><span class="p">,</span> <span class="n">json</span><span class="o">=</span><span class="p">{</span>
+    <span class="s2">&quot;query&quot;</span><span class="p">:</span> <span class="s2">&quot;What is their email address?&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;session_id&quot;</span><span class="p">:</span> <span class="n">session_id</span>
+<span class="p">})</span>
+
+<span class="c1"># The server maintains context between queries</span>
+</code></pre></div>
+<h3 id="multi-step-workflow">Multi-Step Workflow<a class="headerlink" href="#multi-step-workflow" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">requests</span>
+
+<span class="n">session_id</span> <span class="o">=</span> <span class="s2">&quot;workflow-456&quot;</span>
+
+<span class="c1"># Step 1: Get user information</span>
+<span class="n">response1</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="s2">&quot;http://localhost:8001/query&quot;</span><span class="p">,</span> <span class="n">json</span><span class="o">=</span><span class="p">{</span>
+    <span class="s2">&quot;query&quot;</span><span class="p">:</span> <span class="s2">&quot;Get user 123&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;session_id&quot;</span><span class="p">:</span> <span class="n">session_id</span>
+<span class="p">})</span>
+
+<span class="c1"># Step 2: Update user based on previous result</span>
+<span class="n">response2</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="s2">&quot;http://localhost:8001/query&quot;</span><span class="p">,</span> <span class="n">json</span><span class="o">=</span><span class="p">{</span>
+    <span class="s2">&quot;query&quot;</span><span class="p">:</span> <span class="s2">&quot;Update that user&#39;s email to john.doe@example.com&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;session_id&quot;</span><span class="p">:</span> <span class="n">session_id</span>
+<span class="p">})</span>
+
+<span class="c1"># Step 3: Get order history for the user</span>
+<span class="n">response3</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="s2">&quot;http://localhost:8001/query&quot;</span><span class="p">,</span> <span class="n">json</span><span class="o">=</span><span class="p">{</span>
+    <span class="s2">&quot;query&quot;</span><span class="p">:</span> <span class="s2">&quot;Get order history for this user&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;session_id&quot;</span><span class="p">:</span> <span class="n">session_id</span>
+<span class="p">})</span>
+</code></pre></div>
+<h2 id="registry-integration">🔄 Registry Integration<a class="headerlink" href="#registry-integration" title="Permanent link">&para;</a></h2>
+<h3 id="registry-data-structure">Registry Data Structure<a class="headerlink" href="#registry-data-structure" title="Permanent link">&para;</a></h3>
+<p>The server expects registry data in this format:</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;app_x29iirgfycp9e92iqkb04&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Order Tracking Service&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;appKey&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;app_x29iirgfycp9e92iqkb04&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;authenticationMethod&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;api_key&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;environment&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;baseDomain&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;http://localhost:8081&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;security&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;vaultKey&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;env_cmd72flj7000jn5hwd4zv148p_security_settings&quot;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;endpoints&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;getOrderStatus&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;path&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;/orders/{orderId}/status&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;method&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;GET&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Get order status by order ID&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;pathParams&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nt">&quot;orderId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;String&quot;</span><span class="p">},</span>
+<span class="w">            </span><span class="nt">&quot;queryParams&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nt">&quot;include&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;String&quot;</span><span class="p">}</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="auto-sync-configuration">Auto-Sync Configuration<a class="headerlink" href="#auto-sync-configuration" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># Registry sync configuration</span>
+<span class="n">REGISTRY_SYNC_INTERVAL</span><span class="o">=</span><span class="mi">300</span>  <span class="c1"># 5 minutes</span>
+<span class="n">REGISTRY_TIMEOUT</span><span class="o">=</span><span class="mi">30</span>        <span class="c1"># 30 seconds</span>
+<span class="n">REGISTRY_MAX_RETRIES</span><span class="o">=</span><span class="mi">3</span>     <span class="c1"># 3 retry attempts</span>
+</code></pre></div>
+<h2 id="llm-integration">🧠 LLM Integration<a class="headerlink" href="#llm-integration" title="Permanent link">&para;</a></h2>
+<h3 id="ollama-configuration">Ollama Configuration<a class="headerlink" href="#ollama-configuration" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># Ollama settings</span>
+<span class="n">OLLAMA_BASE_URL</span><span class="o">=</span><span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">localhost</span><span class="p">:</span><span class="mi">11434</span>
+<span class="n">OLLAMA_MODEL</span><span class="o">=</span><span class="n">qwen2</span><span class="mf">.5</span><span class="p">:</span><span class="mi">14</span><span class="n">b</span>
+<span class="n">LLM_TEMPERATURE</span><span class="o">=</span><span class="mf">0.1</span>
+<span class="n">LLM_MAX_TOKENS</span><span class="o">=</span><span class="mi">2000</span>
+<span class="n">LLM_TIMEOUT</span><span class="o">=</span><span class="mi">30</span>
+</code></pre></div>
+<h3 id="openai-configuration">OpenAI Configuration<a class="headerlink" href="#openai-configuration" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># OpenAI settings (alternative to Ollama)</span>
+<span class="n">OPENAI_API_KEY</span><span class="o">=</span><span class="n">your</span><span class="o">-</span><span class="n">openai</span><span class="o">-</span><span class="n">key</span>
+<span class="n">OPENAI_MODEL</span><span class="o">=</span><span class="n">gpt</span><span class="o">-</span><span class="mi">4</span>
+<span class="n">OPENAI_TEMPERATURE</span><span class="o">=</span><span class="mf">0.1</span>
+<span class="n">OPENAI_MAX_TOKENS</span><span class="o">=</span><span class="mi">2000</span>
+</code></pre></div>
+<h3 id="custom-llm-prompts">Custom LLM Prompts<a class="headerlink" href="#custom-llm-prompts" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># Tool selection prompt</span>
+<span class="n">TOOL_SELECTION_PROMPT</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">You are an intelligent tool selector. Given a user query and available tools,</span>
+<span class="s2">select the most appropriate tool and extract the necessary parameters.</span>
+
+<span class="s2">Available tools:</span>
+<span class="si">{tools}</span>
+
+<span class="s2">User query: </span><span class="si">{query}</span>
+
+<span class="s2">Select the tool and provide parameters in JSON format.</span>
+<span class="s2">&quot;&quot;&quot;</span>
+
+<span class="c1"># Response formatting prompt</span>
+<span class="n">RESPONSE_FORMAT_PROMPT</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">Format the tool response in a user-friendly way.</span>
+<span class="s2">Tool: </span><span class="si">{tool_name}</span>
+<span class="s2">Response: </span><span class="si">{tool_response}</span>
+
+<span class="s2">Provide a clear, helpful response to the user.</span>
+<span class="s2">&quot;&quot;&quot;</span>
+</code></pre></div>
+<h2 id="security-best-practices">🔒 Security Best Practices<a class="headerlink" href="#security-best-practices" title="Permanent link">&para;</a></h2>
+<h3 id="vault-security">Vault Security<a class="headerlink" href="#vault-security" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>Use Proper Authentication</strong>: Always use vault-native authentication methods</li>
+<li><strong>Rotate Credentials</strong>: Implement regular credential rotation</li>
+<li><strong>Environment Isolation</strong>: Use different vault keys for different environments</li>
+<li><strong>Access Control</strong>: Implement proper access control in your vault system</li>
+<li><strong>Audit Logging</strong>: Enable audit logging for all vault operations</li>
+</ol>
+<h3 id="network-security">Network Security<a class="headerlink" href="#network-security" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># Use HTTPS in production</span>
+<span class="n">VAULT_URL</span><span class="o">=</span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">vault</span><span class="o">.</span><span class="n">example</span><span class="o">.</span><span class="n">com</span><span class="p">:</span><span class="mi">8200</span>
+<span class="n">VAULT_VERIFY_SSL</span><span class="o">=</span><span class="n">true</span>
+
+<span class="c1"># Enable CORS for specific origins</span>
+<span class="n">CORS_ORIGINS</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;https://yourdomain.com&quot;</span><span class="p">]</span>
+</code></pre></div>
+<h3 id="api-security">API Security<a class="headerlink" href="#api-security" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># Use API keys for authentication</span>
+<span class="n">API_KEY_HEADER</span><span class="o">=</span><span class="n">X</span><span class="o">-</span><span class="n">API</span><span class="o">-</span><span class="n">Key</span>
+<span class="n">API_KEY_VALIDATION</span><span class="o">=</span><span class="n">true</span>
+
+<span class="c1"># Enable rate limiting</span>
+<span class="n">RATE_LIMIT_ENABLED</span><span class="o">=</span><span class="n">true</span>
+<span class="n">RATE_LIMIT_REQUESTS</span><span class="o">=</span><span class="mi">100</span>
+<span class="n">RATE_LIMIT_PERIOD</span><span class="o">=</span><span class="mi">60</span>
+</code></pre></div>
+<h2 id="monitoring-and-observability">📊 Monitoring and Observability<a class="headerlink" href="#monitoring-and-observability" title="Permanent link">&para;</a></h2>
+<h3 id="health-checks">Health Checks<a class="headerlink" href="#health-checks" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="err">GET /health</span>
+</code></pre></div>
+<p><strong>Response:</strong>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;healthy&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;timestamp&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2024-01-01T12:00:00Z&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;components&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;ollama&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;healthy&quot;</span><span class="p">},</span>
+<span class="w">        </span><span class="nt">&quot;registry&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;healthy&quot;</span><span class="p">},</span>
+<span class="w">        </span><span class="nt">&quot;vault&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;healthy&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;cached_secrets&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">}</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;version&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1.0.0&quot;</span>
+<span class="p">}</span>
+</code></pre></div></p>
+<h3 id="metrics-collection">Metrics Collection<a class="headerlink" href="#metrics-collection" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># Prometheus metrics</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">prometheus_client</span><span class="w"> </span><span class="kn">import</span> <span class="n">Counter</span><span class="p">,</span> <span class="n">Histogram</span><span class="p">,</span> <span class="n">Gauge</span>
+
+<span class="n">query_counter</span> <span class="o">=</span> <span class="n">Counter</span><span class="p">(</span><span class="s1">&#39;queries_total&#39;</span><span class="p">,</span> <span class="s1">&#39;Total queries processed&#39;</span><span class="p">)</span>
+<span class="n">query_duration</span> <span class="o">=</span> <span class="n">Histogram</span><span class="p">(</span><span class="s1">&#39;query_duration_seconds&#39;</span><span class="p">,</span> <span class="s1">&#39;Query processing time&#39;</span><span class="p">)</span>
+<span class="n">active_sessions</span> <span class="o">=</span> <span class="n">Gauge</span><span class="p">(</span><span class="s1">&#39;active_sessions&#39;</span><span class="p">,</span> <span class="s1">&#39;Number of active sessions&#39;</span><span class="p">)</span>
+</code></pre></div>
+<h3 id="logging-configuration">Logging Configuration<a class="headerlink" href="#logging-configuration" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># Structured logging</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">structlog</span>
+
+<span class="n">logger</span> <span class="o">=</span> <span class="n">structlog</span><span class="o">.</span><span class="n">get_logger</span><span class="p">()</span>
+
+<span class="c1"># Log levels</span>
+<span class="n">LOG_LEVEL</span><span class="o">=</span><span class="n">INFO</span>
+<span class="n">LOG_FORMAT</span><span class="o">=</span><span class="n">json</span>
+
+<span class="c1"># Request logging</span>
+<span class="n">REQUEST_LOGGING</span><span class="o">=</span><span class="n">true</span>
+<span class="n">RESPONSE_LOGGING</span><span class="o">=</span><span class="n">true</span>
+<span class="n">ERROR_LOGGING</span><span class="o">=</span><span class="n">true</span>
+</code></pre></div>
+<h2 id="production-deployment">🚀 Production Deployment<a class="headerlink" href="#production-deployment" title="Permanent link">&para;</a></h2>
+<h3 id="docker-deployment">Docker Deployment<a class="headerlink" href="#docker-deployment" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="k">FROM</span><span class="w"> </span><span class="s">python:3.11-slim</span>
+
+<span class="k">WORKDIR</span><span class="w"> </span><span class="s">/app</span>
+
+<span class="c"># Install dependencies</span>
+<span class="k">COPY</span><span class="w"> </span>requirements.txt<span class="w"> </span>.
+<span class="k">RUN</span><span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>requirements.txt
+
+<span class="c"># Copy application</span>
+<span class="k">COPY</span><span class="w"> </span>.<span class="w"> </span>.
+
+<span class="c"># Expose port</span>
+<span class="k">EXPOSE</span><span class="w"> </span><span class="s">8001</span>
+
+<span class="c"># Health check</span>
+<span class="k">HEALTHCHECK</span><span class="w"> </span>--interval<span class="o">=</span>30s<span class="w"> </span>--timeout<span class="o">=</span>10s<span class="w"> </span>--start-period<span class="o">=</span>5s<span class="w"> </span>--retries<span class="o">=</span><span class="m">3</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>CMD<span class="w"> </span>curl<span class="w"> </span>-f<span class="w"> </span>http://localhost:8001/health<span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="nb">exit</span><span class="w"> </span><span class="m">1</span>
+
+<span class="c"># Start application</span>
+<span class="k">CMD</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;uvicorn&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;app.main:app&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;--host&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;0.0.0.0&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;--port&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;8001&quot;</span><span class="p">]</span>
+</code></pre></div>
+<h3 id="kubernetes-deployment">Kubernetes Deployment<a class="headerlink" href="#kubernetes-deployment" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">apps/v1</span>
+<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Deployment</span>
+<span class="nt">metadata</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">autogent-mcp-server</span>
+<span class="nt">spec</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">replicas</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3</span>
+<span class="w">  </span><span class="nt">selector</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">matchLabels</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">app</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">autogent-mcp-server</span>
+<span class="w">  </span><span class="nt">template</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">metadata</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">labels</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">app</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">autogent-mcp-server</span>
+<span class="w">    </span><span class="nt">spec</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">containers</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">app</span>
+<span class="w">        </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">autogent-mcp-server:latest</span>
+<span class="w">        </span><span class="nt">ports</span><span class="p">:</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">containerPort</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">8001</span>
+<span class="w">        </span><span class="nt">env</span><span class="p">:</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">VAULT_URL</span>
+<span class="w">          </span><span class="nt">valueFrom</span><span class="p">:</span>
+<span class="w">            </span><span class="nt">secretKeyRef</span><span class="p">:</span>
+<span class="w">              </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">vault-config</span>
+<span class="w">              </span><span class="nt">key</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">url</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">VAULT_TOKEN</span>
+<span class="w">          </span><span class="nt">valueFrom</span><span class="p">:</span>
+<span class="w">            </span><span class="nt">secretKeyRef</span><span class="p">:</span>
+<span class="w">              </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">vault-config</span>
+<span class="w">              </span><span class="nt">key</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">token</span>
+<span class="w">        </span><span class="nt">livenessProbe</span><span class="p">:</span>
+<span class="w">          </span><span class="nt">httpGet</span><span class="p">:</span>
+<span class="w">            </span><span class="nt">path</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/health</span>
+<span class="w">            </span><span class="nt">port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">8001</span>
+<span class="w">          </span><span class="nt">initialDelaySeconds</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">30</span>
+<span class="w">          </span><span class="nt">periodSeconds</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">10</span>
+<span class="w">        </span><span class="nt">readinessProbe</span><span class="p">:</span>
+<span class="w">          </span><span class="nt">httpGet</span><span class="p">:</span>
+<span class="w">            </span><span class="nt">path</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/health</span>
+<span class="w">            </span><span class="nt">port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">8001</span>
+<span class="w">          </span><span class="nt">initialDelaySeconds</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">5</span>
+<span class="w">          </span><span class="nt">periodSeconds</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">5</span>
+</code></pre></div>
+<h3 id="environment-specific-configuration">Environment-Specific Configuration<a class="headerlink" href="#environment-specific-configuration" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># Production environment</span>
+<span class="n">ENVIRONMENT</span><span class="o">=</span><span class="n">production</span>
+<span class="n">DEBUG</span><span class="o">=</span><span class="n">false</span>
+<span class="n">LOG_LEVEL</span><span class="o">=</span><span class="n">INFO</span>
+
+<span class="c1"># Performance settings</span>
+<span class="n">WORKERS</span><span class="o">=</span><span class="mi">4</span>
+<span class="n">MAX_CONNECTIONS</span><span class="o">=</span><span class="mi">100</span>
+<span class="n">POOL_SIZE</span><span class="o">=</span><span class="mi">20</span>
+
+<span class="c1"># Security settings</span>
+<span class="n">VAULT_VERIFY_SSL</span><span class="o">=</span><span class="n">true</span>
+<span class="n">CORS_ORIGINS</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;https://yourdomain.com&quot;</span><span class="p">]</span>
+<span class="n">ALLOWED_HOSTS</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;yourdomain.com&quot;</span><span class="p">]</span>
+</code></pre></div>
+<h2 id="troubleshooting">🔍 Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permanent link">&para;</a></h2>
+<h3 id="common-issues">Common Issues<a class="headerlink" href="#common-issues" title="Permanent link">&para;</a></h3>
+<h4 id="registry-connection-issues">Registry Connection Issues<a class="headerlink" href="#registry-connection-issues" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="c1"># Check registry connectivity</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">requests</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;http://localhost:8000/health&quot;</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Registry status: </span><span class="si">{</span><span class="n">response</span><span class="o">.</span><span class="n">status_code</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="k">except</span> <span class="n">requests</span><span class="o">.</span><span class="n">exceptions</span><span class="o">.</span><span class="n">RequestException</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Registry connection error: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</code></pre></div>
+<h4 id="vault-authentication-issues">Vault Authentication Issues<a class="headerlink" href="#vault-authentication-issues" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="c1"># Test vault connectivity</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">hvac</span>
+
+<span class="n">client</span> <span class="o">=</span> <span class="n">hvac</span><span class="o">.</span><span class="n">Client</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="s2">&quot;http://localhost:8200&quot;</span><span class="p">)</span>
+<span class="n">client</span><span class="o">.</span><span class="n">token</span> <span class="o">=</span> <span class="s2">&quot;your-token&quot;</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="n">health</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">sys</span><span class="o">.</span><span class="n">read_health_status</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Vault health: </span><span class="si">{</span><span class="n">health</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Vault error: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</code></pre></div>
+<h4 id="llm-processing-issues">LLM Processing Issues<a class="headerlink" href="#llm-processing-issues" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="c1"># Test Ollama connectivity</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">requests</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;http://localhost:11434/api/tags&quot;</span><span class="p">)</span>
+    <span class="n">models</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Available models: </span><span class="si">{</span><span class="n">models</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Ollama error: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</code></pre></div>
+<h3 id="debug-mode">Debug Mode<a class="headerlink" href="#debug-mode" title="Permanent link">&para;</a></h3>
+<p>Enable debug logging:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Environment variables</span>
+<span class="n">DEBUG</span><span class="o">=</span><span class="n">true</span>
+<span class="n">LOG_LEVEL</span><span class="o">=</span><span class="n">DEBUG</span>
+
+<span class="c1"># Specific loggers</span>
+<span class="n">LOGGER_LEVEL_AUTH</span><span class="o">=</span><span class="n">DEBUG</span>
+<span class="n">LOGGER_LEVEL_VAULT</span><span class="o">=</span><span class="n">DEBUG</span>
+<span class="n">LOGGER_LEVEL_LLM</span><span class="o">=</span><span class="n">DEBUG</span>
+</code></pre></div>
+<h3 id="performance-troubleshooting">Performance Troubleshooting<a class="headerlink" href="#performance-troubleshooting" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># Monitor query performance</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">time</span>
+
+<span class="n">start_time</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+<span class="c1"># Process query</span>
+<span class="n">end_time</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+
+<span class="n">execution_time</span> <span class="o">=</span> <span class="n">end_time</span> <span class="o">-</span> <span class="n">start_time</span>
+<span class="k">if</span> <span class="n">execution_time</span> <span class="o">&gt;</span> <span class="mf">5.0</span><span class="p">:</span>
+    <span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Slow query detected: </span><span class="si">{</span><span class="n">execution_time</span><span class="si">}</span><span class="s2">s&quot;</span><span class="p">)</span>
+</code></pre></div>
+<h2 id="contributing">🤝 Contributing<a class="headerlink" href="#contributing" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Fork the repository</li>
+<li>Create a feature branch: <code>git checkout -b feature/amazing-feature</code></li>
+<li>Make your changes</li>
+<li>Add tests for new functionality</li>
+<li>Ensure all tests pass: <code>pytest</code></li>
+<li>Submit a pull request</li>
+</ol>
+<h2 id="license">📄 License<a class="headerlink" href="#license" title="Permanent link">&para;</a></h2>
+<p>This project is licensed under the MIT License - see the <a href="https://github.com/autogentmcp/autogentmcp_server/blob/main/LICENSE">LICENSE</a> file for details.</p>
+<p><strong>Note</strong>: LICENSE file will be added to the repository soon. See the <a href="../contributing/#license">Contributing Guide</a> for full license details.</p>
+<hr />
+<p><strong>Next Steps</strong>: 
+- Set up the <a href="../mcp-registry/">MCP Registry Server</a> as a prerequisite
+- Check out the <a href="../mcp-core-java/">MCP Core Java SDK</a> for easy integration
+- Explore the <a href="../mcp-demo-apps/">Demo Applications</a> for real-world examples</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+    <a href="https://github.com/autogentmcp/docs" target="_blank" rel="noopener" title="GitHub" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "navigation.top", "content.code.annotate", "content.tabs.link", "content.tabs.code"], "search": "../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.13a4f30d.min.js"></script>
+      
+    
+  </body>
+</html>

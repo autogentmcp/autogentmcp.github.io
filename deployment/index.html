@@ -1,0 +1,2487 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://autogentmcp.github.io/deployment/">
+      
+      
+        <link rel="prev" href="../diagrams/">
+      
+      
+        <link rel="next" href="../contributing/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
+    
+    
+      
+        <title>Production Deployment - Autogent MCP Ecosystem Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.342714a4.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#production-deployment-guide" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Autogent MCP Ecosystem Docs" class="md-header__button md-logo" aria-label="Autogent MCP Ecosystem Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Autogent MCP Ecosystem Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Production Deployment
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Overview
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../portal/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  MCP Portal
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../mcp-registry/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  MCP Registry Server
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../autogentmcp_server/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Main Server
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../mcp-core-java/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  MCP Core Java SDK
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../mcp-core-python/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  MCP Core Python SDK
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../mcp-core-node/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  MCP Core Node SDK
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../mcp-demo-apps/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  MCP Demo Apps
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../diagrams/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Ecosystem Diagrams
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="./" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Production Deployment
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../contributing/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Contributing Guide
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../license-setup/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  License Setup
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Autogent MCP Ecosystem Docs" class="md-nav__button md-logo" aria-label="Autogent MCP Ecosystem Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Autogent MCP Ecosystem Docs
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../portal/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    MCP Portal
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mcp-registry/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    MCP Registry Server
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../autogentmcp_server/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Main Server
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mcp-core-java/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    MCP Core Java SDK
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mcp-core-python/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    MCP Core Python SDK
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mcp-core-node/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    MCP Core Node SDK
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mcp-demo-apps/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    MCP Demo Apps
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../diagrams/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Ecosystem Diagrams
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Production Deployment
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Production Deployment
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#architecture-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      🏗️ Architecture Overview
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deployment-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      🚀 Deployment Steps
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🚀 Deployment Steps">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-infrastructure-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Infrastructure Setup
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Infrastructure Setup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-server-requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.1 Server Requirements
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-network-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.2 Network Configuration
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-database-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Database Setup
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Database Setup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-postgresql-installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.1 PostgreSQL Installation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-database-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.2 Database Configuration
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23-database-backup-strategy" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.3 Database Backup Strategy
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-hashicorp-vault-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. HashiCorp Vault Setup
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. HashiCorp Vault Setup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-vault-installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.1 Vault Installation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-vault-initialization" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.2 Vault Initialization
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-mcp-portal-deployment" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. MCP Portal Deployment
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. MCP Portal Deployment">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-portal-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.1 Portal Setup
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-portal-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.2 Portal Configuration
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-mcp-registry-deployment" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. MCP Registry Deployment
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. MCP Registry Deployment">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51-registry-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.1 Registry Setup
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52-registry-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.2 Registry Configuration
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-autogent-server-deployment" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Autogent Server Deployment
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Autogent Server Deployment">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#61-autogent-server-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      6.1 Autogent Server Setup
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#62-autogent-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      6.2 Autogent Configuration
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7-load-balancer-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. Load Balancer Setup
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. Load Balancer Setup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#71-nginx-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      7.1 Nginx Configuration
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#8-ssl-certificate-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      8. SSL Certificate Setup
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8. SSL Certificate Setup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#81-lets-encrypt-free-ssl" class="md-nav__link">
+    <span class="md-ellipsis">
+      8.1 Let's Encrypt (Free SSL)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#82-custom-ssl-certificate" class="md-nav__link">
+    <span class="md-ellipsis">
+      8.2 Custom SSL Certificate
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#9-monitoring-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      9. Monitoring Setup
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9. Monitoring Setup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#91-prometheus-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      9.1 Prometheus Configuration
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#92-grafana-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      9.2 Grafana Setup
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#10-security-hardening" class="md-nav__link">
+    <span class="md-ellipsis">
+      10. Security Hardening
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="10. Security Hardening">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#101-system-security" class="md-nav__link">
+    <span class="md-ellipsis">
+      10.1 System Security
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#102-application-security" class="md-nav__link">
+    <span class="md-ellipsis">
+      10.2 Application Security
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#11-backup-strategy" class="md-nav__link">
+    <span class="md-ellipsis">
+      11. Backup Strategy
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="11. Backup Strategy">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#111-database-backup" class="md-nav__link">
+    <span class="md-ellipsis">
+      11.1 Database Backup
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-service-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      12. Service Management
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="12. Service Management">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#121-start-all-services" class="md-nav__link">
+    <span class="md-ellipsis">
+      12.1 Start All Services
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#122-health-check-script" class="md-nav__link">
+    <span class="md-ellipsis">
+      12.2 Health Check Script
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#maintenance" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔄 Maintenance
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🔄 Maintenance">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#regular-tasks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Regular Tasks
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#log-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      Log Management
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scaling-considerations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Scaling Considerations
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#support" class="md-nav__link">
+    <span class="md-ellipsis">
+      📞 Support
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contributing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Contributing Guide
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../license-setup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    License Setup
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#architecture-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      🏗️ Architecture Overview
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deployment-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      🚀 Deployment Steps
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🚀 Deployment Steps">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-infrastructure-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Infrastructure Setup
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Infrastructure Setup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-server-requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.1 Server Requirements
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-network-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.2 Network Configuration
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-database-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Database Setup
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Database Setup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-postgresql-installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.1 PostgreSQL Installation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-database-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.2 Database Configuration
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23-database-backup-strategy" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.3 Database Backup Strategy
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-hashicorp-vault-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. HashiCorp Vault Setup
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. HashiCorp Vault Setup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-vault-installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.1 Vault Installation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-vault-initialization" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.2 Vault Initialization
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-mcp-portal-deployment" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. MCP Portal Deployment
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. MCP Portal Deployment">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-portal-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.1 Portal Setup
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-portal-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.2 Portal Configuration
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-mcp-registry-deployment" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. MCP Registry Deployment
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. MCP Registry Deployment">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51-registry-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.1 Registry Setup
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52-registry-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.2 Registry Configuration
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-autogent-server-deployment" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Autogent Server Deployment
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Autogent Server Deployment">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#61-autogent-server-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      6.1 Autogent Server Setup
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#62-autogent-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      6.2 Autogent Configuration
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7-load-balancer-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. Load Balancer Setup
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. Load Balancer Setup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#71-nginx-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      7.1 Nginx Configuration
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#8-ssl-certificate-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      8. SSL Certificate Setup
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8. SSL Certificate Setup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#81-lets-encrypt-free-ssl" class="md-nav__link">
+    <span class="md-ellipsis">
+      8.1 Let's Encrypt (Free SSL)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#82-custom-ssl-certificate" class="md-nav__link">
+    <span class="md-ellipsis">
+      8.2 Custom SSL Certificate
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#9-monitoring-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      9. Monitoring Setup
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9. Monitoring Setup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#91-prometheus-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      9.1 Prometheus Configuration
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#92-grafana-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      9.2 Grafana Setup
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#10-security-hardening" class="md-nav__link">
+    <span class="md-ellipsis">
+      10. Security Hardening
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="10. Security Hardening">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#101-system-security" class="md-nav__link">
+    <span class="md-ellipsis">
+      10.1 System Security
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#102-application-security" class="md-nav__link">
+    <span class="md-ellipsis">
+      10.2 Application Security
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#11-backup-strategy" class="md-nav__link">
+    <span class="md-ellipsis">
+      11. Backup Strategy
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="11. Backup Strategy">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#111-database-backup" class="md-nav__link">
+    <span class="md-ellipsis">
+      11.1 Database Backup
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-service-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      12. Service Management
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="12. Service Management">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#121-start-all-services" class="md-nav__link">
+    <span class="md-ellipsis">
+      12.1 Start All Services
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#122-health-check-script" class="md-nav__link">
+    <span class="md-ellipsis">
+      12.2 Health Check Script
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#maintenance" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔄 Maintenance
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🔄 Maintenance">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#regular-tasks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Regular Tasks
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#log-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      Log Management
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scaling-considerations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Scaling Considerations
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#support" class="md-nav__link">
+    <span class="md-ellipsis">
+      📞 Support
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="production-deployment-guide">Production Deployment Guide<a class="headerlink" href="#production-deployment-guide" title="Permanent link">&para;</a></h1>
+<p>This guide covers deploying the complete Autogent MCP ecosystem to production environments with enterprise-grade security, monitoring, and scalability.</p>
+<h2 id="architecture-overview">🏗️ Architecture Overview<a class="headerlink" href="#architecture-overview" title="Permanent link">&para;</a></h2>
+<pre class="mermaid"><code>graph TB
+    subgraph "External Users"
+        A[Web Browser]
+        B[API Clients]
+    end
+
+    subgraph "Load Balancer"
+        C[nginx/HAProxy]
+    end
+
+    subgraph "Application Layer"
+        D[MCP Portal&lt;br/&gt;Next.js]
+        E[MCP Registry&lt;br/&gt;FastAPI]
+        F[Autogent Server&lt;br/&gt;FastAPI]
+        G[Client Apps&lt;br/&gt;Java/Python/Node]
+    end
+
+    subgraph "Database Layer"
+        H[PostgreSQL&lt;br/&gt;Primary]
+        I[PostgreSQL&lt;br/&gt;Replica]
+    end
+
+    subgraph "Security Layer"
+        J[HashiCorp Vault&lt;br/&gt;HA Cluster]
+        K[Redis&lt;br/&gt;Session Store]
+    end
+
+    subgraph "Monitoring"
+        L[Prometheus]
+        M[Grafana]
+        N[Jaeger]
+    end
+
+    A --&gt; C
+    B --&gt; C
+    C --&gt; D
+    C --&gt; E
+    C --&gt; F
+    D --&gt; H
+    E --&gt; H
+    F --&gt; H
+    H --&gt; I
+    D --&gt; J
+    E --&gt; J
+    F --&gt; J
+    G --&gt; E
+    D --&gt; K
+    E --&gt; K
+    F --&gt; K
+
+    L --&gt; D
+    L --&gt; E
+    L --&gt; F
+    M --&gt; L
+    N --&gt; D
+    N --&gt; E
+    N --&gt; F
+
+    style D fill:#e8f5e8
+    style E fill:#e1f5fe
+    style F fill:#f3e5f5
+    style J fill:#fff3e0</code></pre>
+<h2 id="deployment-steps">🚀 Deployment Steps<a class="headerlink" href="#deployment-steps" title="Permanent link">&para;</a></h2>
+<h3 id="1-infrastructure-setup">1. Infrastructure Setup<a class="headerlink" href="#1-infrastructure-setup" title="Permanent link">&para;</a></h3>
+<h4 id="11-server-requirements">1.1 Server Requirements<a class="headerlink" href="#11-server-requirements" title="Permanent link">&para;</a></h4>
+<p><strong>Minimum Production Setup</strong>:
+<div class="highlight"><pre><span></span><code>Portal Server:     2 CPU, 4GB RAM, 20GB SSD
+Registry Server:   2 CPU, 4GB RAM, 20GB SSD
+Autogent Server:   4 CPU, 8GB RAM, 40GB SSD
+Database Server:   4 CPU, 8GB RAM, 100GB SSD
+Vault Server:      2 CPU, 4GB RAM, 20GB SSD
+</code></pre></div></p>
+<p><strong>Recommended Production Setup</strong>:
+<div class="highlight"><pre><span></span><code>Portal Server:     4 CPU, 8GB RAM, 50GB SSD
+Registry Server:   4 CPU, 8GB RAM, 50GB SSD
+Autogent Server:   8 CPU, 16GB RAM, 100GB SSD
+Database Server:   8 CPU, 16GB RAM, 500GB SSD
+Vault Server:      4 CPU, 8GB RAM, 50GB SSD
+</code></pre></div></p>
+<h4 id="12-network-configuration">1.2 Network Configuration<a class="headerlink" href="#12-network-configuration" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="c1"># Security Groups / Firewall Rules</span>
+<span class="c1"># Portal (Internal only)</span>
+Portal:<span class="w">     </span><span class="m">3000</span>/tcp<span class="w"> </span><span class="o">(</span>internal<span class="o">)</span>
+
+<span class="c1"># Registry (Public API)</span>
+Registry:<span class="w">   </span><span class="m">8000</span>/tcp<span class="w"> </span><span class="o">(</span>public<span class="o">)</span>
+
+<span class="c1"># Autogent Server (Public API)</span>
+Autogent:<span class="w">   </span><span class="m">8001</span>/tcp<span class="w"> </span><span class="o">(</span>public<span class="o">)</span>
+
+<span class="c1"># Database (Internal only)</span>
+Database:<span class="w">   </span><span class="m">5432</span>/tcp<span class="w"> </span><span class="o">(</span>internal<span class="o">)</span>
+
+<span class="c1"># Vault (Internal only)</span>
+Vault:<span class="w">      </span><span class="m">8200</span>/tcp<span class="w"> </span><span class="o">(</span>internal<span class="o">)</span>
+
+<span class="c1"># Load Balancer</span>
+LB:<span class="w">         </span><span class="m">80</span>/tcp,<span class="w"> </span><span class="m">443</span>/tcp<span class="w"> </span><span class="o">(</span>public<span class="o">)</span>
+</code></pre></div>
+<h3 id="2-database-setup">2. Database Setup<a class="headerlink" href="#2-database-setup" title="Permanent link">&para;</a></h3>
+<h4 id="21-postgresql-installation">2.1 PostgreSQL Installation<a class="headerlink" href="#21-postgresql-installation" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="c1"># Install PostgreSQL 15</span>
+sudo<span class="w"> </span>apt<span class="w"> </span>update
+sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>postgresql-15<span class="w"> </span>postgresql-contrib
+
+<span class="c1"># Create database and user</span>
+sudo<span class="w"> </span>-u<span class="w"> </span>postgres<span class="w"> </span>psql
+CREATE<span class="w"> </span>DATABASE<span class="w"> </span>mcp_registry<span class="p">;</span>
+CREATE<span class="w"> </span>USER<span class="w"> </span>mcp_user<span class="w"> </span>WITH<span class="w"> </span>ENCRYPTED<span class="w"> </span>PASSWORD<span class="w"> </span><span class="s1">&#39;your_secure_password&#39;</span><span class="p">;</span>
+GRANT<span class="w"> </span>ALL<span class="w"> </span>PRIVILEGES<span class="w"> </span>ON<span class="w"> </span>DATABASE<span class="w"> </span>mcp_registry<span class="w"> </span>TO<span class="w"> </span>mcp_user<span class="p">;</span>
+GRANT<span class="w"> </span>ALL<span class="w"> </span>PRIVILEGES<span class="w"> </span>ON<span class="w"> </span>ALL<span class="w"> </span>TABLES<span class="w"> </span>IN<span class="w"> </span>SCHEMA<span class="w"> </span>public<span class="w"> </span>TO<span class="w"> </span>mcp_user<span class="p">;</span>
+GRANT<span class="w"> </span>ALL<span class="w"> </span>PRIVILEGES<span class="w"> </span>ON<span class="w"> </span>ALL<span class="w"> </span>SEQUENCES<span class="w"> </span>IN<span class="w"> </span>SCHEMA<span class="w"> </span>public<span class="w"> </span>TO<span class="w"> </span>mcp_user<span class="p">;</span>
+</code></pre></div>
+<h4 id="22-database-configuration">2.2 Database Configuration<a class="headerlink" href="#22-database-configuration" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="c1"># Edit postgresql.conf</span>
+sudo<span class="w"> </span>nano<span class="w"> </span>/etc/postgresql/15/main/postgresql.conf
+
+<span class="c1"># Key settings for production</span>
+<span class="nv">max_connections</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">200</span>
+<span class="nv">shared_buffers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>256MB
+<span class="nv">effective_cache_size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>1GB
+<span class="nv">maintenance_work_mem</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>64MB
+<span class="nv">checkpoint_completion_target</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span>.9
+<span class="nv">wal_buffers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>16MB
+<span class="nv">default_statistics_target</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">100</span>
+</code></pre></div>
+<h4 id="23-database-backup-strategy">2.3 Database Backup Strategy<a class="headerlink" href="#23-database-backup-strategy" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="c1"># Create backup script</span>
+<span class="c1">#!/bin/bash</span>
+<span class="nv">DATE</span><span class="o">=</span><span class="k">$(</span>date<span class="w"> </span>+%Y%m%d_%H%M%S<span class="k">)</span>
+<span class="nv">BACKUP_DIR</span><span class="o">=</span><span class="s2">&quot;/backup/postgresql&quot;</span>
+mkdir<span class="w"> </span>-p<span class="w"> </span><span class="nv">$BACKUP_DIR</span>
+
+pg_dump<span class="w"> </span>-h<span class="w"> </span>localhost<span class="w"> </span>-U<span class="w"> </span>mcp_user<span class="w"> </span>-d<span class="w"> </span>mcp_registry<span class="w"> </span>&gt;<span class="w"> </span><span class="nv">$BACKUP_DIR</span>/mcp_registry_<span class="nv">$DATE</span>.sql
+
+<span class="c1"># Keep only last 7 days</span>
+find<span class="w"> </span><span class="nv">$BACKUP_DIR</span><span class="w"> </span>-name<span class="w"> </span><span class="s2">&quot;*.sql&quot;</span><span class="w"> </span>-mtime<span class="w"> </span>+7<span class="w"> </span>-delete
+</code></pre></div>
+<h3 id="3-hashicorp-vault-setup">3. HashiCorp Vault Setup<a class="headerlink" href="#3-hashicorp-vault-setup" title="Permanent link">&para;</a></h3>
+<h4 id="31-vault-installation">3.1 Vault Installation<a class="headerlink" href="#31-vault-installation" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="c1"># Install Vault</span>
+curl<span class="w"> </span>-fsSL<span class="w"> </span>https://apt.releases.hashicorp.com/gpg<span class="w"> </span><span class="p">|</span><span class="w"> </span>sudo<span class="w"> </span>apt-key<span class="w"> </span>add<span class="w"> </span>-
+sudo<span class="w"> </span>apt-add-repository<span class="w"> </span><span class="s2">&quot;deb [arch=amd64] https://apt.releases.hashicorp.com </span><span class="k">$(</span>lsb_release<span class="w"> </span>-cs<span class="k">)</span><span class="s2"> main&quot;</span>
+sudo<span class="w"> </span>apt<span class="w"> </span>update<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>vault
+
+<span class="c1"># Create vault configuration</span>
+sudo<span class="w"> </span>mkdir<span class="w"> </span>-p<span class="w"> </span>/etc/vault.d
+sudo<span class="w"> </span>tee<span class="w"> </span>/etc/vault.d/vault.hcl<span class="w"> </span><span class="s">&lt;&lt;EOF</span>
+<span class="s">storage &quot;file&quot; {</span>
+<span class="s">  path = &quot;/opt/vault/data&quot;</span>
+<span class="s">}</span>
+
+<span class="s">listener &quot;tcp&quot; {</span>
+<span class="s">  address     = &quot;0.0.0.0:8200&quot;</span>
+<span class="s">  tls_disable = 0</span>
+<span class="s">  tls_cert_file = &quot;/etc/vault.d/vault.crt&quot;</span>
+<span class="s">  tls_key_file = &quot;/etc/vault.d/vault.key&quot;</span>
+<span class="s">}</span>
+
+<span class="s">api_addr = &quot;https://127.0.0.1:8200&quot;</span>
+<span class="s">cluster_addr = &quot;https://127.0.0.1:8201&quot;</span>
+<span class="s">ui = true</span>
+<span class="s">EOF</span>
+</code></pre></div>
+<h4 id="32-vault-initialization">3.2 Vault Initialization<a class="headerlink" href="#32-vault-initialization" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="c1"># Initialize Vault</span>
+vault<span class="w"> </span>operator<span class="w"> </span>init
+
+<span class="c1"># Unseal Vault (use 3 of 5 keys)</span>
+vault<span class="w"> </span>operator<span class="w"> </span>unseal<span class="w"> </span>&lt;key1&gt;
+vault<span class="w"> </span>operator<span class="w"> </span>unseal<span class="w"> </span>&lt;key2&gt;
+vault<span class="w"> </span>operator<span class="w"> </span>unseal<span class="w"> </span>&lt;key3&gt;
+
+<span class="c1"># Enable KV secrets engine</span>
+vault<span class="w"> </span>secrets<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>-version<span class="o">=</span><span class="m">2</span><span class="w"> </span>kv
+
+<span class="c1"># Create MCP policy</span>
+vault<span class="w"> </span>policy<span class="w"> </span>write<span class="w"> </span>mcp-policy<span class="w"> </span>-<span class="w"> </span><span class="s">&lt;&lt;EOF</span>
+<span class="s">path &quot;secret/data/mcp/*&quot; {</span>
+<span class="s">  capabilities = [&quot;create&quot;, &quot;read&quot;, &quot;update&quot;, &quot;delete&quot;, &quot;list&quot;]</span>
+<span class="s">}</span>
+<span class="s">EOF</span>
+
+<span class="c1"># Create service token</span>
+vault<span class="w"> </span>token<span class="w"> </span>create<span class="w"> </span>-policy<span class="o">=</span>mcp-policy<span class="w"> </span>-ttl<span class="o">=</span>8760h
+</code></pre></div>
+<h3 id="4-mcp-portal-deployment">4. MCP Portal Deployment<a class="headerlink" href="#4-mcp-portal-deployment" title="Permanent link">&para;</a></h3>
+<h4 id="41-portal-setup">4.1 Portal Setup<a class="headerlink" href="#41-portal-setup" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="c1"># Clone and build portal</span>
+git<span class="w"> </span>clone<span class="w"> </span>https://github.com/autogentmcp/portal.git
+<span class="nb">cd</span><span class="w"> </span>portal
+
+<span class="c1"># Install dependencies</span>
+npm<span class="w"> </span>ci<span class="w"> </span>--production
+
+<span class="c1"># Build application</span>
+npm<span class="w"> </span>run<span class="w"> </span>build
+
+<span class="c1"># Create production environment</span>
+sudo<span class="w"> </span>tee<span class="w"> </span>/etc/systemd/system/mcp-portal.service<span class="w"> </span><span class="s">&lt;&lt;EOF</span>
+<span class="s">[Unit]</span>
+<span class="s">Description=MCP Portal</span>
+<span class="s">After=network.target</span>
+
+<span class="s">[Service]</span>
+<span class="s">Type=simple</span>
+<span class="s">User=mcp</span>
+<span class="s">WorkingDirectory=/opt/mcp/portal</span>
+<span class="s">ExecStart=/usr/bin/node server.js</span>
+<span class="s">Restart=always</span>
+<span class="s">RestartSec=3</span>
+<span class="s">Environment=NODE_ENV=production</span>
+<span class="s">Environment=PORT=3000</span>
+<span class="s">EnvironmentFile=/etc/mcp/portal.env</span>
+
+<span class="s">[Install]</span>
+<span class="s">WantedBy=multi-user.target</span>
+<span class="s">EOF</span>
+</code></pre></div>
+<h4 id="42-portal-configuration">4.2 Portal Configuration<a class="headerlink" href="#42-portal-configuration" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="c1"># Create production environment file</span>
+sudo<span class="w"> </span>mkdir<span class="w"> </span>-p<span class="w"> </span>/etc/mcp
+sudo<span class="w"> </span>tee<span class="w"> </span>/etc/mcp/portal.env<span class="w"> </span><span class="s">&lt;&lt;EOF</span>
+<span class="s"># Database</span>
+<span class="s">DATABASE_URL=&quot;postgresql://mcp_user:your_secure_password@localhost:5432/mcp_registry&quot;</span>
+
+<span class="s"># JWT Authentication</span>
+<span class="s">JWT_SECRET=&quot;your-super-secret-jwt-key-here-min-32-chars&quot;</span>
+
+<span class="s"># Application</span>
+<span class="s">NODE_ENV=&quot;production&quot;</span>
+<span class="s">PORT=3000</span>
+
+<span class="s"># Security Provider</span>
+<span class="s">SECURITY_PROVIDER=&quot;hashicorp_vault&quot;</span>
+<span class="s">VAULT_URL=&quot;https://localhost:8200&quot;</span>
+<span class="s">VAULT_TOKEN=&quot;your-vault-token-here&quot;</span>
+<span class="s">VAULT_NAMESPACE=&quot;admin&quot;</span>
+<span class="s">VAULT_PATH=&quot;secret/data/mcp&quot;</span>
+<span class="s">VAULT_MOUNT=&quot;kv&quot;</span>
+
+<span class="s"># SSL/TLS</span>
+<span class="s">SSL_CERT=&quot;/etc/ssl/certs/portal.crt&quot;</span>
+<span class="s">SSL_KEY=&quot;/etc/ssl/private/portal.key&quot;</span>
+<span class="s">EOF</span>
+</code></pre></div>
+<h3 id="5-mcp-registry-deployment">5. MCP Registry Deployment<a class="headerlink" href="#5-mcp-registry-deployment" title="Permanent link">&para;</a></h3>
+<h4 id="51-registry-setup">5.1 Registry Setup<a class="headerlink" href="#51-registry-setup" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="c1"># Create virtual environment</span>
+python3<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>/opt/mcp/registry
+<span class="nb">cd</span><span class="w"> </span>/opt/mcp/registry
+<span class="nb">source</span><span class="w"> </span>bin/activate
+
+<span class="c1"># Clone and install</span>
+git<span class="w"> </span>clone<span class="w"> </span>https://github.com/autogentmcp/mcp-registry.git<span class="w"> </span>.
+pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>requirements.txt
+
+<span class="c1"># Run database migrations</span>
+prisma<span class="w"> </span>generate
+prisma<span class="w"> </span>db<span class="w"> </span>push
+
+<span class="c1"># Create systemd service</span>
+sudo<span class="w"> </span>tee<span class="w"> </span>/etc/systemd/system/mcp-registry.service<span class="w"> </span><span class="s">&lt;&lt;EOF</span>
+<span class="s">[Unit]</span>
+<span class="s">Description=MCP Registry Server</span>
+<span class="s">After=network.target postgresql.service</span>
+
+<span class="s">[Service]</span>
+<span class="s">Type=simple</span>
+<span class="s">User=mcp</span>
+<span class="s">WorkingDirectory=/opt/mcp/registry</span>
+<span class="s">ExecStart=/opt/mcp/registry/bin/python run_server.py</span>
+<span class="s">Restart=always</span>
+<span class="s">RestartSec=3</span>
+<span class="s">Environment=PYTHONPATH=/opt/mcp/registry</span>
+<span class="s">EnvironmentFile=/etc/mcp/registry.env</span>
+
+<span class="s">[Install]</span>
+<span class="s">WantedBy=multi-user.target</span>
+<span class="s">EOF</span>
+</code></pre></div>
+<h4 id="52-registry-configuration">5.2 Registry Configuration<a class="headerlink" href="#52-registry-configuration" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="c1"># Create production environment file</span>
+sudo<span class="w"> </span>tee<span class="w"> </span>/etc/mcp/registry.env<span class="w"> </span><span class="s">&lt;&lt;EOF</span>
+<span class="s"># Database</span>
+<span class="s">DATABASE_URL=&quot;postgresql://mcp_user:your_secure_password@localhost:5432/mcp_registry&quot;</span>
+
+<span class="s"># Server</span>
+<span class="s">HOST=0.0.0.0</span>
+<span class="s">PORT=8000</span>
+<span class="s">WORKERS=4</span>
+
+<span class="s"># Security</span>
+<span class="s">SECRET_KEY=&quot;your-secret-key-here&quot;</span>
+<span class="s">ALLOWED_HOSTS=[&quot;your-domain.com&quot;, &quot;api.your-domain.com&quot;]</span>
+
+<span class="s"># Logging</span>
+<span class="s">LOG_LEVEL=INFO</span>
+<span class="s">LOG_FILE=&quot;/var/log/mcp/registry.log&quot;</span>
+
+<span class="s"># Health Check</span>
+<span class="s">HEALTH_CHECK_INTERVAL=30</span>
+<span class="s">HEALTH_CHECK_TIMEOUT=10</span>
+<span class="s">HEALTH_CHECK_RETRIES=3</span>
+<span class="s">EOF</span>
+</code></pre></div>
+<h3 id="6-autogent-server-deployment">6. Autogent Server Deployment<a class="headerlink" href="#6-autogent-server-deployment" title="Permanent link">&para;</a></h3>
+<h4 id="61-autogent-server-setup">6.1 Autogent Server Setup<a class="headerlink" href="#61-autogent-server-setup" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="c1"># Create virtual environment</span>
+python3<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>/opt/mcp/autogent
+<span class="nb">cd</span><span class="w"> </span>/opt/mcp/autogent
+<span class="nb">source</span><span class="w"> </span>bin/activate
+
+<span class="c1"># Clone and install</span>
+git<span class="w"> </span>clone<span class="w"> </span>https://github.com/autogentmcp/autogentmcp_server.git<span class="w"> </span>.
+pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>requirements.txt
+
+<span class="c1"># Create systemd service</span>
+sudo<span class="w"> </span>tee<span class="w"> </span>/etc/systemd/system/mcp-autogent.service<span class="w"> </span><span class="s">&lt;&lt;EOF</span>
+<span class="s">[Unit]</span>
+<span class="s">Description=Autogent MCP Server</span>
+<span class="s">After=network.target mcp-registry.service</span>
+
+<span class="s">[Service]</span>
+<span class="s">Type=simple</span>
+<span class="s">User=mcp</span>
+<span class="s">WorkingDirectory=/opt/mcp/autogent</span>
+<span class="s">ExecStart=/opt/mcp/autogent/bin/uvicorn app.main:app --host 0.0.0.0 --port 8001 --workers 4</span>
+<span class="s">Restart=always</span>
+<span class="s">RestartSec=3</span>
+<span class="s">Environment=PYTHONPATH=/opt/mcp/autogent</span>
+<span class="s">EnvironmentFile=/etc/mcp/autogent.env</span>
+
+<span class="s">[Install]</span>
+<span class="s">WantedBy=multi-user.target</span>
+<span class="s">EOF</span>
+</code></pre></div>
+<h4 id="62-autogent-configuration">6.2 Autogent Configuration<a class="headerlink" href="#62-autogent-configuration" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="c1"># Create production environment file</span>
+sudo<span class="w"> </span>tee<span class="w"> </span>/etc/mcp/autogent.env<span class="w"> </span><span class="s">&lt;&lt;EOF</span>
+<span class="s"># Registry</span>
+<span class="s">REGISTRY_URL=&quot;http://localhost:8000&quot;</span>
+<span class="s">REGISTRY_API_KEY=&quot;your-registry-api-key&quot;</span>
+
+<span class="s"># LLM Configuration</span>
+<span class="s">OLLAMA_BASE_URL=&quot;http://localhost:11434&quot;</span>
+<span class="s">OPENAI_API_KEY=&quot;your-openai-api-key&quot;</span>
+<span class="s">DEFAULT_MODEL=&quot;llama3.1&quot;</span>
+
+<span class="s"># Vault Integration</span>
+<span class="s">VAULT_URL=&quot;https://localhost:8200&quot;</span>
+<span class="s">VAULT_TOKEN=&quot;your-vault-token&quot;</span>
+<span class="s">VAULT_MOUNT=&quot;kv&quot;</span>
+<span class="s">VAULT_PATH=&quot;secret/data/mcp&quot;</span>
+
+<span class="s"># Performance</span>
+<span class="s">CACHE_TTL=300</span>
+<span class="s">MAX_CONCURRENT_REQUESTS=50</span>
+<span class="s">REQUEST_TIMEOUT=30</span>
+
+<span class="s"># Logging</span>
+<span class="s">LOG_LEVEL=INFO</span>
+<span class="s">LOG_FILE=&quot;/var/log/mcp/autogent.log&quot;</span>
+<span class="s">EOF</span>
+</code></pre></div>
+<h3 id="7-load-balancer-setup">7. Load Balancer Setup<a class="headerlink" href="#7-load-balancer-setup" title="Permanent link">&para;</a></h3>
+<h4 id="71-nginx-configuration">7.1 Nginx Configuration<a class="headerlink" href="#71-nginx-configuration" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="c1"># Install nginx</span>
+sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>nginx
+
+<span class="c1"># Create configuration</span>
+sudo<span class="w"> </span>tee<span class="w"> </span>/etc/nginx/sites-available/mcp<span class="w"> </span><span class="s">&lt;&lt;EOF</span>
+<span class="s">upstream mcp_portal {</span>
+<span class="s">    server localhost:3000;</span>
+<span class="s">}</span>
+
+<span class="s">upstream mcp_registry {</span>
+<span class="s">    server localhost:8000;</span>
+<span class="s">}</span>
+
+<span class="s">upstream mcp_autogent {</span>
+<span class="s">    server localhost:8001;</span>
+<span class="s">}</span>
+
+<span class="s">server {</span>
+<span class="s">    listen 80;</span>
+<span class="s">    server_name portal.your-domain.com;</span>
+<span class="s">    return 301 https://\$server_name\$request_uri;</span>
+<span class="s">}</span>
+
+<span class="s">server {</span>
+<span class="s">    listen 443 ssl http2;</span>
+<span class="s">    server_name portal.your-domain.com;</span>
+
+<span class="s">    ssl_certificate /etc/ssl/certs/portal.crt;</span>
+<span class="s">    ssl_certificate_key /etc/ssl/private/portal.key;</span>
+<span class="s">    ssl_protocols TLSv1.2 TLSv1.3;</span>
+<span class="s">    ssl_ciphers HIGH:!aNULL:!MD5;</span>
+
+<span class="s">    location / {</span>
+<span class="s">        proxy_pass http://mcp_portal;</span>
+<span class="s">        proxy_set_header Host \$host;</span>
+<span class="s">        proxy_set_header X-Real-IP \$remote_addr;</span>
+<span class="s">        proxy_set_header X-Forwarded-For \$proxy_add_x_forwarded_for;</span>
+<span class="s">        proxy_set_header X-Forwarded-Proto \$scheme;</span>
+<span class="s">    }</span>
+<span class="s">}</span>
+
+<span class="s">server {</span>
+<span class="s">    listen 80;</span>
+<span class="s">    server_name api.your-domain.com;</span>
+<span class="s">    return 301 https://\$server_name\$request_uri;</span>
+<span class="s">}</span>
+
+<span class="s">server {</span>
+<span class="s">    listen 443 ssl http2;</span>
+<span class="s">    server_name api.your-domain.com;</span>
+
+<span class="s">    ssl_certificate /etc/ssl/certs/api.crt;</span>
+<span class="s">    ssl_certificate_key /etc/ssl/private/api.key;</span>
+<span class="s">    ssl_protocols TLSv1.2 TLSv1.3;</span>
+<span class="s">    ssl_ciphers HIGH:!aNULL:!MD5;</span>
+
+<span class="s">    location /registry/ {</span>
+<span class="s">        proxy_pass http://mcp_registry/;</span>
+<span class="s">        proxy_set_header Host \$host;</span>
+<span class="s">        proxy_set_header X-Real-IP \$remote_addr;</span>
+<span class="s">        proxy_set_header X-Forwarded-For \$proxy_add_x_forwarded_for;</span>
+<span class="s">        proxy_set_header X-Forwarded-Proto \$scheme;</span>
+<span class="s">    }</span>
+
+<span class="s">    location /autogent/ {</span>
+<span class="s">        proxy_pass http://mcp_autogent/;</span>
+<span class="s">        proxy_set_header Host \$host;</span>
+<span class="s">        proxy_set_header X-Real-IP \$remote_addr;</span>
+<span class="s">        proxy_set_header X-Forwarded-For \$proxy_add_x_forwarded_for;</span>
+<span class="s">        proxy_set_header X-Forwarded-Proto \$scheme;</span>
+<span class="s">    }</span>
+<span class="s">}</span>
+<span class="s">EOF</span>
+
+<span class="c1"># Enable site</span>
+sudo<span class="w"> </span>ln<span class="w"> </span>-s<span class="w"> </span>/etc/nginx/sites-available/mcp<span class="w"> </span>/etc/nginx/sites-enabled/
+sudo<span class="w"> </span>nginx<span class="w"> </span>-t
+sudo<span class="w"> </span>systemctl<span class="w"> </span>restart<span class="w"> </span>nginx
+</code></pre></div>
+<h3 id="8-ssl-certificate-setup">8. SSL Certificate Setup<a class="headerlink" href="#8-ssl-certificate-setup" title="Permanent link">&para;</a></h3>
+<h4 id="81-lets-encrypt-free-ssl">8.1 Let's Encrypt (Free SSL)<a class="headerlink" href="#81-lets-encrypt-free-ssl" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="c1"># Install certbot</span>
+sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>certbot<span class="w"> </span>python3-certbot-nginx
+
+<span class="c1"># Generate certificates</span>
+sudo<span class="w"> </span>certbot<span class="w"> </span>--nginx<span class="w"> </span>-d<span class="w"> </span>portal.your-domain.com<span class="w"> </span>-d<span class="w"> </span>api.your-domain.com
+
+<span class="c1"># Auto-renewal</span>
+sudo<span class="w"> </span>crontab<span class="w"> </span>-e
+<span class="c1"># Add: 0 12 * * * /usr/bin/certbot renew --quiet</span>
+</code></pre></div>
+<h4 id="82-custom-ssl-certificate">8.2 Custom SSL Certificate<a class="headerlink" href="#82-custom-ssl-certificate" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="c1"># Generate private key</span>
+sudo<span class="w"> </span>openssl<span class="w"> </span>genrsa<span class="w"> </span>-out<span class="w"> </span>/etc/ssl/private/portal.key<span class="w"> </span><span class="m">2048</span>
+
+<span class="c1"># Generate certificate request</span>
+sudo<span class="w"> </span>openssl<span class="w"> </span>req<span class="w"> </span>-new<span class="w"> </span>-key<span class="w"> </span>/etc/ssl/private/portal.key<span class="w"> </span>-out<span class="w"> </span>/etc/ssl/certs/portal.csr
+
+<span class="c1"># Generate self-signed certificate (for testing)</span>
+sudo<span class="w"> </span>openssl<span class="w"> </span>x509<span class="w"> </span>-req<span class="w"> </span>-days<span class="w"> </span><span class="m">365</span><span class="w"> </span>-in<span class="w"> </span>/etc/ssl/certs/portal.csr<span class="w"> </span>-signkey<span class="w"> </span>/etc/ssl/private/portal.key<span class="w"> </span>-out<span class="w"> </span>/etc/ssl/certs/portal.crt
+</code></pre></div>
+<h3 id="9-monitoring-setup">9. Monitoring Setup<a class="headerlink" href="#9-monitoring-setup" title="Permanent link">&para;</a></h3>
+<h4 id="91-prometheus-configuration">9.1 Prometheus Configuration<a class="headerlink" href="#91-prometheus-configuration" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="c1"># Install Prometheus</span>
+sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>prometheus
+
+<span class="c1"># Configure Prometheus</span>
+sudo<span class="w"> </span>tee<span class="w"> </span>/etc/prometheus/prometheus.yml<span class="w"> </span><span class="s">&lt;&lt;EOF</span>
+<span class="s">global:</span>
+<span class="s">  scrape_interval: 15s</span>
+
+<span class="s">scrape_configs:</span>
+<span class="s">  - job_name: &#39;mcp-portal&#39;</span>
+<span class="s">    static_configs:</span>
+<span class="s">      - targets: [&#39;localhost:3000&#39;]</span>
+<span class="s">    metrics_path: &#39;/metrics&#39;</span>
+
+<span class="s">  - job_name: &#39;mcp-registry&#39;</span>
+<span class="s">    static_configs:</span>
+<span class="s">      - targets: [&#39;localhost:8000&#39;]</span>
+<span class="s">    metrics_path: &#39;/metrics&#39;</span>
+
+<span class="s">  - job_name: &#39;mcp-autogent&#39;</span>
+<span class="s">    static_configs:</span>
+<span class="s">      - targets: [&#39;localhost:8001&#39;]</span>
+<span class="s">    metrics_path: &#39;/metrics&#39;</span>
+<span class="s">EOF</span>
+
+sudo<span class="w"> </span>systemctl<span class="w"> </span>restart<span class="w"> </span>prometheus
+</code></pre></div>
+<h4 id="92-grafana-setup">9.2 Grafana Setup<a class="headerlink" href="#92-grafana-setup" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="c1"># Install Grafana</span>
+sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>grafana
+
+<span class="c1"># Configure Grafana</span>
+sudo<span class="w"> </span>systemctl<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>grafana-server
+sudo<span class="w"> </span>systemctl<span class="w"> </span>start<span class="w"> </span>grafana-server
+
+<span class="c1"># Access Grafana at http://localhost:3000</span>
+<span class="c1"># Default credentials: admin/admin</span>
+</code></pre></div>
+<h3 id="10-security-hardening">10. Security Hardening<a class="headerlink" href="#10-security-hardening" title="Permanent link">&para;</a></h3>
+<h4 id="101-system-security">10.1 System Security<a class="headerlink" href="#101-system-security" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="c1"># Update system</span>
+sudo<span class="w"> </span>apt<span class="w"> </span>update<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>sudo<span class="w"> </span>apt<span class="w"> </span>upgrade<span class="w"> </span>-y
+
+<span class="c1"># Configure firewall</span>
+sudo<span class="w"> </span>ufw<span class="w"> </span>allow<span class="w"> </span><span class="m">22</span>/tcp
+sudo<span class="w"> </span>ufw<span class="w"> </span>allow<span class="w"> </span><span class="m">80</span>/tcp
+sudo<span class="w"> </span>ufw<span class="w"> </span>allow<span class="w"> </span><span class="m">443</span>/tcp
+sudo<span class="w"> </span>ufw<span class="w"> </span>--force<span class="w"> </span><span class="nb">enable</span>
+
+<span class="c1"># Disable unnecessary services</span>
+sudo<span class="w"> </span>systemctl<span class="w"> </span>disable<span class="w"> </span>bluetooth
+sudo<span class="w"> </span>systemctl<span class="w"> </span>disable<span class="w"> </span>cups
+
+<span class="c1"># Configure fail2ban</span>
+sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>fail2ban
+sudo<span class="w"> </span>systemctl<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>fail2ban
+sudo<span class="w"> </span>systemctl<span class="w"> </span>start<span class="w"> </span>fail2ban
+</code></pre></div>
+<h4 id="102-application-security">10.2 Application Security<a class="headerlink" href="#102-application-security" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="c1"># Create dedicated user</span>
+sudo<span class="w"> </span>useradd<span class="w"> </span>-r<span class="w"> </span>-s<span class="w"> </span>/bin/false<span class="w"> </span>mcp
+sudo<span class="w"> </span>mkdir<span class="w"> </span>-p<span class="w"> </span>/opt/mcp
+sudo<span class="w"> </span>chown<span class="w"> </span>mcp:mcp<span class="w"> </span>/opt/mcp
+
+<span class="c1"># Set file permissions</span>
+sudo<span class="w"> </span>chmod<span class="w"> </span><span class="m">750</span><span class="w"> </span>/opt/mcp
+sudo<span class="w"> </span>chmod<span class="w"> </span><span class="m">640</span><span class="w"> </span>/etc/mcp/*.env
+
+<span class="c1"># Enable SELinux/AppArmor (if available)</span>
+sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>apparmor-utils
+sudo<span class="w"> </span>aa-enforce<span class="w"> </span>/etc/apparmor.d/*
+</code></pre></div>
+<h3 id="11-backup-strategy">11. Backup Strategy<a class="headerlink" href="#11-backup-strategy" title="Permanent link">&para;</a></h3>
+<h4 id="111-database-backup">11.1 Database Backup<a class="headerlink" href="#111-database-backup" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="c1"># Create backup script</span>
+sudo<span class="w"> </span>tee<span class="w"> </span>/usr/local/bin/backup-mcp.sh<span class="w"> </span><span class="s">&lt;&lt;EOF</span>
+<span class="s">#!/bin/bash</span>
+<span class="s">DATE=\$(date +%Y%m%d_%H%M%S)</span>
+<span class="s">BACKUP_DIR=&quot;/backup/mcp&quot;</span>
+<span class="s">mkdir -p \$BACKUP_DIR</span>
+
+<span class="s"># Database backup</span>
+<span class="s">pg_dump -h localhost -U mcp_user -d mcp_registry &gt; \$BACKUP_DIR/database_\$DATE.sql</span>
+
+<span class="s"># Application backup</span>
+<span class="s">tar -czf \$BACKUP_DIR/portal_\$DATE.tar.gz -C /opt/mcp portal</span>
+<span class="s">tar -czf \$BACKUP_DIR/registry_\$DATE.tar.gz -C /opt/mcp registry</span>
+<span class="s">tar -czf \$BACKUP_DIR/autogent_\$DATE.tar.gz -C /opt/mcp autogent</span>
+
+<span class="s"># Vault backup</span>
+<span class="s">vault operator raft snapshot save \$BACKUP_DIR/vault_\$DATE.snap</span>
+
+<span class="s"># Cleanup old backups (keep 30 days)</span>
+<span class="s">find \$BACKUP_DIR -name &quot;*.sql&quot; -mtime +30 -delete</span>
+<span class="s">find \$BACKUP_DIR -name &quot;*.tar.gz&quot; -mtime +30 -delete</span>
+<span class="s">find \$BACKUP_DIR -name &quot;*.snap&quot; -mtime +30 -delete</span>
+<span class="s">EOF</span>
+
+sudo<span class="w"> </span>chmod<span class="w"> </span>+x<span class="w"> </span>/usr/local/bin/backup-mcp.sh
+
+<span class="c1"># Schedule backup</span>
+sudo<span class="w"> </span>crontab<span class="w"> </span>-e
+<span class="c1"># Add: 0 2 * * * /usr/local/bin/backup-mcp.sh</span>
+</code></pre></div>
+<h3 id="12-service-management">12. Service Management<a class="headerlink" href="#12-service-management" title="Permanent link">&para;</a></h3>
+<h4 id="121-start-all-services">12.1 Start All Services<a class="headerlink" href="#121-start-all-services" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="c1"># Enable and start services</span>
+sudo<span class="w"> </span>systemctl<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>postgresql
+sudo<span class="w"> </span>systemctl<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>vault
+sudo<span class="w"> </span>systemctl<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>mcp-portal
+sudo<span class="w"> </span>systemctl<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>mcp-registry
+sudo<span class="w"> </span>systemctl<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>mcp-autogent
+sudo<span class="w"> </span>systemctl<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>nginx
+sudo<span class="w"> </span>systemctl<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>prometheus
+sudo<span class="w"> </span>systemctl<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>grafana-server
+
+<span class="c1"># Start services in order</span>
+sudo<span class="w"> </span>systemctl<span class="w"> </span>start<span class="w"> </span>postgresql
+sudo<span class="w"> </span>systemctl<span class="w"> </span>start<span class="w"> </span>vault
+sudo<span class="w"> </span>systemctl<span class="w"> </span>start<span class="w"> </span>mcp-registry
+sudo<span class="w"> </span>systemctl<span class="w"> </span>start<span class="w"> </span>mcp-autogent
+sudo<span class="w"> </span>systemctl<span class="w"> </span>start<span class="w"> </span>mcp-portal
+sudo<span class="w"> </span>systemctl<span class="w"> </span>start<span class="w"> </span>nginx
+sudo<span class="w"> </span>systemctl<span class="w"> </span>start<span class="w"> </span>prometheus
+sudo<span class="w"> </span>systemctl<span class="w"> </span>start<span class="w"> </span>grafana-server
+</code></pre></div>
+<h4 id="122-health-check-script">12.2 Health Check Script<a class="headerlink" href="#122-health-check-script" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="c1"># Create health check script</span>
+sudo<span class="w"> </span>tee<span class="w"> </span>/usr/local/bin/health-check.sh<span class="w"> </span><span class="s">&lt;&lt;EOF</span>
+<span class="s">#!/bin/bash</span>
+
+<span class="s">echo &quot;=== MCP Ecosystem Health Check ===&quot;</span>
+<span class="s">echo &quot;Date: \$(date)&quot;</span>
+<span class="s">echo</span>
+
+<span class="s"># Check services</span>
+<span class="s">services=(&quot;postgresql&quot; &quot;vault&quot; &quot;mcp-portal&quot; &quot;mcp-registry&quot; &quot;mcp-autogent&quot; &quot;nginx&quot;)</span>
+<span class="s">for service in &quot;\${services[@]}&quot;; do</span>
+<span class="s">    if systemctl is-active --quiet \$service; then</span>
+<span class="s">        echo &quot;✓ \$service is running&quot;</span>
+<span class="s">    else</span>
+<span class="s">        echo &quot;✗ \$service is not running&quot;</span>
+<span class="s">    fi</span>
+<span class="s">done</span>
+
+<span class="s">echo</span>
+
+<span class="s"># Check endpoints</span>
+<span class="s">endpoints=(</span>
+<span class="s">    &quot;http://localhost:3000/health&quot;</span>
+<span class="s">    &quot;http://localhost:8000/health&quot;</span>
+<span class="s">    &quot;http://localhost:8001/health&quot;</span>
+<span class="s">)</span>
+
+<span class="s">for endpoint in &quot;\${endpoints[@]}&quot;; do</span>
+<span class="s">    if curl -s -o /dev/null -w &quot;%{http_code}&quot; \$endpoint | grep -q &quot;200&quot;; then</span>
+<span class="s">        echo &quot;✓ \$endpoint is responding&quot;</span>
+<span class="s">    else</span>
+<span class="s">        echo &quot;✗ \$endpoint is not responding&quot;</span>
+<span class="s">    fi</span>
+<span class="s">done</span>
+<span class="s">EOF</span>
+
+sudo<span class="w"> </span>chmod<span class="w"> </span>+x<span class="w"> </span>/usr/local/bin/health-check.sh
+</code></pre></div>
+<h2 id="maintenance">🔄 Maintenance<a class="headerlink" href="#maintenance" title="Permanent link">&para;</a></h2>
+<h3 id="regular-tasks">Regular Tasks<a class="headerlink" href="#regular-tasks" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>Daily</strong>:</li>
+<li>Check service status</li>
+<li>Review logs for errors</li>
+<li>
+<p>Monitor resource usage</p>
+</li>
+<li>
+<p><strong>Weekly</strong>:</p>
+</li>
+<li>Update system packages</li>
+<li>Review security logs</li>
+<li>
+<p>Check backup integrity</p>
+</li>
+<li>
+<p><strong>Monthly</strong>:</p>
+</li>
+<li>Rotate certificates</li>
+<li>Review access logs</li>
+<li>Update dependencies</li>
+</ol>
+<h3 id="log-management">Log Management<a class="headerlink" href="#log-management" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># Configure log rotation</span>
+sudo<span class="w"> </span>tee<span class="w"> </span>/etc/logrotate.d/mcp<span class="w"> </span><span class="s">&lt;&lt;EOF</span>
+<span class="s">/var/log/mcp/*.log {</span>
+<span class="s">    daily</span>
+<span class="s">    rotate 30</span>
+<span class="s">    compress</span>
+<span class="s">    delaycompress</span>
+<span class="s">    missingok</span>
+<span class="s">    notifempty</span>
+<span class="s">    create 644 mcp mcp</span>
+<span class="s">    postrotate</span>
+<span class="s">        systemctl reload mcp-portal mcp-registry mcp-autogent</span>
+<span class="s">    endscript</span>
+<span class="s">}</span>
+<span class="s">EOF</span>
+</code></pre></div>
+<h3 id="scaling-considerations">Scaling Considerations<a class="headerlink" href="#scaling-considerations" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>Horizontal Scaling</strong>:</li>
+<li>Add more application servers</li>
+<li>Use load balancer health checks</li>
+<li>
+<p>Implement session affinity</p>
+</li>
+<li>
+<p><strong>Database Scaling</strong>:</p>
+</li>
+<li>Set up read replicas</li>
+<li>Implement connection pooling</li>
+<li>
+<p>Consider database partitioning</p>
+</li>
+<li>
+<p><strong>Vault Scaling</strong>:</p>
+</li>
+<li>Configure Vault HA cluster</li>
+<li>Use Consul for storage backend</li>
+<li>Implement auto-unsealing</li>
+</ol>
+<h2 id="support">📞 Support<a class="headerlink" href="#support" title="Permanent link">&para;</a></h2>
+<p>For production deployment support:
+- Review the troubleshooting guides
+- Check the monitoring dashboards
+- Contact support for enterprise assistance</p>
+<hr />
+<p>This deployment guide provides a comprehensive setup for production environments. Adjust configurations based on your specific requirements and infrastructure.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+    <a href="https://github.com/autogentmcp/docs" target="_blank" rel="noopener" title="GitHub" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "navigation.top", "content.code.annotate", "content.tabs.link", "content.tabs.code"], "search": "../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.13a4f30d.min.js"></script>
+      
+    
+  </body>
+</html>

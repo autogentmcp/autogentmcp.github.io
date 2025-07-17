@@ -2,6 +2,50 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://autogentmcp.github.io/</loc>
-         <lastmod>2025-06-26</lastmod>
+         <lastmod>2025-07-17</lastmod>
+    </url>
+    <url>
+         <loc>https://autogentmcp.github.io/autogentmcp_server/</loc>
+         <lastmod>2025-07-17</lastmod>
+    </url>
+    <url>
+         <loc>https://autogentmcp.github.io/contributing/</loc>
+         <lastmod>2025-07-17</lastmod>
+    </url>
+    <url>
+         <loc>https://autogentmcp.github.io/deployment/</loc>
+         <lastmod>2025-07-17</lastmod>
+    </url>
+    <url>
+         <loc>https://autogentmcp.github.io/diagrams/</loc>
+         <lastmod>2025-07-17</lastmod>
+    </url>
+    <url>
+         <loc>https://autogentmcp.github.io/license-setup/</loc>
+         <lastmod>2025-07-17</lastmod>
+    </url>
+    <url>
+         <loc>https://autogentmcp.github.io/mcp-core-java/</loc>
+         <lastmod>2025-07-17</lastmod>
+    </url>
+    <url>
+         <loc>https://autogentmcp.github.io/mcp-core-node/</loc>
+         <lastmod>2025-07-17</lastmod>
+    </url>
+    <url>
+         <loc>https://autogentmcp.github.io/mcp-core-python/</loc>
+         <lastmod>2025-07-17</lastmod>
+    </url>
+    <url>
+         <loc>https://autogentmcp.github.io/mcp-demo-apps/</loc>
+         <lastmod>2025-07-17</lastmod>
+    </url>
+    <url>
+         <loc>https://autogentmcp.github.io/mcp-registry/</loc>
+         <lastmod>2025-07-17</lastmod>
+    </url>
+    <url>
+         <loc>https://autogentmcp.github.io/portal/</loc>
+         <lastmod>2025-07-17</lastmod>
     </url>
 </urlset>
